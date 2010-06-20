@@ -1,0 +1,38 @@
+<html> 
+  <head> 
+    <title> 
+    </title>
+    <!--<script src="script/jquery-1.2.3.min.js"></script>-->
+    <script src="jq.js"></script> 
+   <!-- <script src="script/jquery.hive.js"></script>    -->
+    <script>var strings=[];</script> 
+    <script> 
+      
+ 
+$(document).ready(function(){
+var url="http://search.twitter.com/search.json?rpp=5&callback=?&q=";
+var query="annasob";
+    $.getJSON(url+query,function(json){
+    
+$.each(json.results, function(i, tweet){
+strings[i] = tweet.text;
+});
+});
+});
+ 
+//      $.each(json.results,function(i,tweet){
+    //     $("#results").append('<div class="tweet">
+      //   <img class="imgTweet" width="48" height="48" 
+      //   src="'+tweet.profile_image_url+'"/>'+tweet.text+' 
+       //  <strong>From:</strong> 
+        // <a href="http://twitter.com'+tweet.from_user+'">@'+tweet.from_user+'</a>
+         //</div>');
+        
+ alert(strings[0]);
+    </script> 
+  </head> 
+ 
+  <body > 
+  </body> 
+</html> 
+

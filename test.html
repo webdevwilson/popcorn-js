@@ -1,0 +1,15 @@
+<!DOCTYPE HTML> 
+<html> 
+ <head> 
+  <title>Twitter Feed</title> 
+ </head> 
+ <body> 
+  <p>Twitter Feed @annasob: <output id="result"></output></p> 
+  <script> 
+   var worker = new Worker('twitterWorker.js');
+   worker.onmessage = function (event) {
+     document.getElementById('result').textContent = event.data;
+   };
+  </script> 
+ </body> 
+</html>
