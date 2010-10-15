@@ -23,6 +23,9 @@
 
   // The video manager manages a single video element, and all it's commands.
   popcorn.VideoManager = function(videoElement) {
+    initialWidth = videoElement.width;
+    initialHeight = videoElement.height;
+
     this.commandObjects  = {};
     this.manifestObjects = {};
     this.videoElement = videoElement;
@@ -225,6 +228,19 @@
     }
 
     this.onIn = function() {
+      style = this.target.getAttribute("style") + 'text-align:'+( this.params.align || "center" )+';';
+      
+      if(initialWidth != this.videoManager.videoElement.width || 
+        initialHeight != this.videoManager.videoElement.height ) {
+        var scale = this.videoManager.videoElement.width / initialWidth;
+        initialWidth = this.videoManager.videoElement.width;
+        initialHeight = this.videoManager.videoElement.height;
+        var top = initialHeight - 40;
+        var font = 18 * scale;
+        //this.target.setAttribute('style', ' ');
+        //this.target.setAttribute('style', 'position:absolute;top:' + top + 'px;left:1px;color:white;font-weight:bold;font-family:sans-serif;text-shadow:black 2px 2px 6px;font-size:' + font + 'px;width:100%;');
+        style = this.target.getAttribute("style") + 'position:absolute;top:' + top + 'px;left:1px;color:white;font-weight:bold;font-family:sans-serif;text-shadow:black 2px 2px 6px;font-size:' + font + 'px;width:100%;';
+      }
       if (this.params.languagesrc) {
         var i = document.getElementById(this.params.languagesrc).selectedIndex,
             that = this;
@@ -236,7 +252,6 @@
       } else {
         this.target.innerHTML = this.text;
       }
-      style = this.target.getAttribute("style") + 'text-align:'+( this.params.align || "center" )+';';
       this.target.setAttribute('style', style);
     };
     this.onOut = function() {
