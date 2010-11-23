@@ -625,7 +625,7 @@
         link.setAttribute('href', src);
         link.setAttribute('target', '_blank');
         var p = document.createElement('p');
-        popcorn.innerHTML = data.parse.displaytitle;
+        p.innerHTML = data.parse.displaytitle;
         link.appendChild(p);
         // get the first 140 characters of the wiki content
         var desc = document.createElement('p');
