@@ -1,0 +1,5 @@
+<popcorn>
+  <timeline>
+    <image in="1" out="5" src="team.jpg" width="500" height="334" target="imgdiv"/>
+  </timeline>
+</popcorn>

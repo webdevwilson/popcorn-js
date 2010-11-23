@@ -756,7 +756,36 @@
       this.target.setAttribute('style', 'display:none');
     };
   };
+  ////////////////////////////////////////////////////////////////////////////
+  // Image Command
+  ////////////////////////////////////////////////////////////////////////////
   
+  popcorn.ImageCommand = function(name, params, text, videoManager) {
+    popcorn.VideoCommand.call(this, name, params, text, videoManager);
+
+    var src = this.params.src;
+    // Setup a default, hidden div to hold the image
+    var target = document.createElement('div');
+    target.setAttribute('id', this.id);
+    
+    // Div is hidden by default
+    target.setAttribute('style', 'display:none');
+    var image = document.createElement('img');
+    image.setAttribute('src', this.params.src);
+    image.setAttribute('height', this.params.height);
+    image.setAttribute('width', this.params.width);
+    target.appendChild(image);
+    //apend to the target div provided in the xml
+    document.getElementById(this.params.target).appendChild(target);
+
+    this.target = target;
+    this.onIn = function() {
+      this.target.setAttribute('style', 'display:inline');
+    };
+    this.onOut = function() {
+      this.target.setAttribute('style', 'display:none');
+    };
+  };
   // Wrapper for accessing commands by name
   // commands[name].create() returns a new command of type name
   // Not sure if this is the best way; maybe it's too fancy?
@@ -830,6 +859,11 @@
     webpage: {
       create: function(name, params, text, videoManager) {
         return new popcorn.WebPageCommand(name, params, text, videoManager);
+      }
+    },
+    image: {
+      create: function(name, params, text, videoManager) {
+        return new popcorn.ImageCommand(name, params, text, videoManager);
       }
     }
   };
