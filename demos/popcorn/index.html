@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../../popcorn.js"></script>
+  <!-- This is needed for google maps api -->
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <!-- These two are needed for google news api -->
+  <script src="http://google.com/jsapi"></script>
+  <script>google.load("elements", "1", {packages : ["newsshow"]});</script>
+</head>
+<body>
+  
+    <video src="http://scotland.proximity.on.ca/sdowne/popcornFinal.wmv" data-timeline-sources="xml/data.xml" style="display:inline;border-radius:10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;position:fixed;left:50%;top:50%;margin:-135px 0 0 -240px;border-style:solid;border-width:15px;" width="480" height="270" controls></video>
+    <div id="mapinfo" style="width:250px;height:350px;"></div>
+    <div id="attribinfo" style="width:250px;height:50px;"></div>
+    <div id="wikiinfo" style="width:250px;height:50px;"></div>
+    <img style="display:none;" id="image" /><!--right-->
+    <div id="googlenewsinfo"></div>
+    <div id="flickrinfo"></div>
+    <div id="twitterinfo"></div>
+    <div id="iframeinfo"></div>
+  </body>
+</html>
+

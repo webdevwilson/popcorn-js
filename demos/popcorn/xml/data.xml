@@ -1,0 +1,34 @@
+<popcorn>
+	<timeline>
+    <subtitles language="nl" >
+		  <subtitle in="00:00:01:00" out="00:00:03:00">My name is Anna and I am one of the lead developers of</subtitle>
+		  <subtitle in="00:00:03:50" out="00:00:7:00">popcorn.js a tool Wired Magazine said "makes web video</subtitle>
+		  <subtitle in="00:00:07:30" out="00:00:10:40">every bit as interactive as the rest of the web."</subtitle>
+		  <subtitle in="00:00:11:00" out="00:00:14:50">My team and I started working on popcorn-js this summer</subtitle>
+		  <subtitle in="00:00:15:00" out="00:00:18:30">at the Mozilla Corporation headquarters in Toronto Ontario</subtitle>
+		  <subtitle in="00:00:19:00" out="00:00:22:30">Mozilla makes the popular Firefox Web Browser,</subtitle>
+		  <subtitle in="00:00:23:00" out="00:00:25:30">and tools to help people use the web</subtitle>
+		  <subtitle in="00:00:26:00" out="00:00:27:30">to make other technologies.</subtitle>
+		  <subtitle in="00:00:28:00" out="00:00:32:00">Popcorn.js is a JavaScript library for timing video with metadata.</subtitle>
+		  <subtitle in="00:00:33:00" out="00:00:34:20">What is metadata?</subtitle>
+		  <subtitle in="00:00:35:00" out="00:00:32:00">Maybe your video references an article, and you'd like to show it,</subtitle>
+		  <subtitle in="00:00:32:00" out="00:00:41:00">"We hebben dus op dit moment op het natuurkundig laboratorium in Eindhoven 5 aansluitingen."</subtitle>
+		  <subtitle in="00:00:41:00" out="00:00:47:00">"Dan krijgen we 11 aansluitingen bij Philips telecommunicatieindustrie in Hilversum."</subtitle>
+		  <subtitle in="00:00:47:00" out="00:00:50:00">"Bij de centrale directie van de PTT in Den Haag..."</subtitle>
+		  <subtitle in="00:00:50:00" out="00:00:54:00">Zodra de spiegel wordt ingeklapt wordt automatisch weer het beeld van de spreker zichtbaar.</subtitle>
+		  <subtitle in="00:00:54:00" out="00:01:00:00">Het is de bedoelding van de PTT en Philips om in de praktijk na te gaan welke waarde de toevoeging van</subtitle>
+		  <subtitle in="00:01:00:00" out="00:01:03:00">beeld aan een telefoongesprek voor de abonnee kan hebben.</subtitle>
+		  <subtitle in="00:01:03:00" out="00:01:05:00">Vergaderingen op afstand worden mogelijk.</subtitle>
+		  <subtitle in="00:01:05:00" out="00:01:10:00">Schema's, constructietekeningen, drukproeven, producten, veel visuele informatie kan snel en gemakkelijk</subtitle>
+      <subtitle in="00:01:10:00" out="00:01:12:00">worden overgebracht.</subtitle>
+      <subtitle in="00:01:12:00" out="00:01:22:00">Kortom, de toekomst biedt kant over verassingen.</subtitle>
+    </subtitles>
+    <attribution in="00:00:03:00" out="00:00:11:07" target="attribinfo" nameofwork="Mozillas Popcorn Project Adds Extra Flavor to Web Video" copyrightholder="http://www.webmonkey.com"></attribution>
+    <location in="00:00:03:00" out="00:00:11:07" long="-79.403323" lat="43.665429" target="mapinfo" zoom="16"/>
+    <wiki in="00:00:05:02" out="00:00:10:07" src="http://en.wikipedia.org/wiki/Metadata" description="Metadata" numberOfWords="250" lang="en" target="wikiinfo"/>
+    <googlenews in="00:00:01:02" out="00:00:10:07" target="googlenewsinfo" topic="mozilla"/>
+    <flickr in="00:00:05:02" out="00:00:10:07" target="flickrinfo" userid="54210095@N08" numberofimages="4" padding="4px"/>
+    <twitter in="00:00:03:00" out="00:00:11:07" title="popcorn-js" source="popcorn-js" target="twitterinfo" width="238" height="120"/>
+    <webpage in="00:00:03:00" out="00:00:11:07" target="iframeinfo" width="100%" height="100%" src="http://www.chip.ro/stiri/14548-popcorn_de_la_mozilla__o_noua_dimensiune_video.html" description="Chip Online"></webpage>
+	</timeline>
+</popcorn>
