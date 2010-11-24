@@ -345,9 +345,11 @@
       $("a").each(function() {
         this.setAttribute('target', '_blank');
       });
+      document.getElementById(this.params.target).style.display = "inline";
     };
     this.onOut = function() {
       this.target.setAttribute('style', 'display:none');
+      document.getElementById(this.params.target).style.display = "none";
     };
   };
 
@@ -532,10 +534,12 @@
         }
       }).render().start();
       that.onIn = function() {
-        that.target.setAttribute('style', 'display:inline');
+        that.target.style.display = "inline";//.setAttribute('style', 'display:inline');
+        document.getElementById(this.params.target).style.display = "inline";
       };
       that.onOut = function() {
-        that.target.setAttribute('style', 'display:none');
+        that.target.style.display = "none";//.setAttribute('style', 'display:none');
+        document.getElementById(this.params.target).style.display = "none";
       };
       that.preload = function() {}; // Probably going to need to preload this.
     });
@@ -582,10 +586,12 @@
     this.target = target;
 
     this.onIn = function() {
-      this.target.setAttribute('style', 'display:inline');
+      this.target.style.display = "inline";//.setAttribute('style', 'display:inline');
+      document.getElementById(this.params.target).style.display = "inline";
     };
     this.onOut = function() {
-      this.target.setAttribute('style', 'display:none');
+      this.target.style.display = "none";//.setAttribute('style', 'display:none');
+       document.getElementById(this.params.target).style.display = "none";
     };
   };
 	
@@ -640,9 +646,12 @@
     this.target = target;
     this.onIn = function() {
       this.target.setAttribute('style', 'display:inline');
+      document.getElementById(this.params.target).style.display = "block";
+      
     };
     this.onOut = function() {
       this.target.setAttribute('style', 'display:none');
+      document.getElementById(this.params.target).style.display = "none";
     };
   };
   ////////////////////////////////////////////////////////////////////////////
@@ -715,9 +724,11 @@
     }
     this.onIn = function() {
       document.getElementById(this.params.target).innerHTML = attribution;
+      document.getElementById(this.params.target).style.display = "block";//setAttribute('style', 'display:inline');
     };
     this.onOut = function() {
       document.getElementById(this.params.target).innerHTML = "";
+      document.getElementById(this.params.target).style.display = "none";//.setAttribute('style', 'display:none');
     };
   };
 
@@ -801,9 +812,12 @@
     this.target = target;
     this.onIn = function() {
       this.target.setAttribute('style', 'display:inline');
+      document.getElementById(this.params.target).style.display = "block";
+      
     };
     this.onOut = function() {
       this.target.setAttribute('style', 'display:none');
+      document.getElementById(this.params.target).style.display = "none";
     };
   };
   // Wrapper for accessing commands by name

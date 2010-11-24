@@ -1,6 +1,6 @@
 <popcorn>
 	<timeline>
-    <subtitles language="nl" >
+    <subtitles language="en" >
 		  <subtitle in="00:00:00:00" out="00:00:03:00">My name is Anna and I am one of the lead developers of</subtitle>
 		  <subtitle in="00:00:03:00" out="00:00:08:00">popcorn.js a tool that Wired Magazine said "makes web video</subtitle>
 		  <subtitle in="00:00:08:00" out="00:00:11:00">every bit as interactive as the rest of the web."</subtitle>
@@ -34,15 +34,21 @@
       <subtitle in="00:01:59:00" >are just above me.</subtitle>
 	  
     </subtitles>
-    <attribution in="00:00:03:00" out="00:00:11:00" target="attribinfo" nameofwork="Mozillas Popcorn Project Adds Extra Flavor to Web Video" copyrightholder="http://www.webmonkey.com"></attribution>
+    <subtitles language="en" target="translateinfo" languagesrc="language">
+		  <subtitle in="00:00:00:00" out="00:00:03:00">My name is Anna and I am one of the lead developers of</subtitle>
+		  <subtitle in="00:00:03:00" out="00:00:08:00">popcorn.js a tool that Wired Magazine said "makes web video</subtitle>
+		  <subtitle in="00:00:08:00" out="00:00:11:00">every bit as interactive as the rest of the web."</subtitle>
+		  <subtitle in="00:00:11:00" out="00:00:15:00">My team and I started working on popcorn-js this summer</subtitle>
+    </subtitles>
+    <attribution in="00:00:06:00" out="00:00:11:00" target="attribinfo" nameofwork="&lt;h1&gt;Copyright Information&lt;/h1&gt;&lt;br /&gt;Mozillas Popcorn Project Adds Extra Flavor to Web Video" copyrightholder="http://www.webmonkey.com"></attribution>
     <location in="00:00:16:00" out="00:00:20:00" long="-79.403323" lat="43.665429" target="mapinfo" zoom="16"/>
-    <wiki in="00:00:46:00" out="00:00:51:00" src="http://en.wikipedia.org/wiki/Metadata" description="Metadata" numberOfWords="250" lang="en" target="wikiinfoTop"/>
+    <wiki in="00:00:46:00" out="00:00:51:00" src="http://en.wikipedia.org/wiki/Metadata" description="Metadata" numberOfWords="250" lang="en" target="wikiinfo"/>
     <googlenews in="00:01:09:00" out="00:01:14:00" target="googlenewsinfo" topic="mozilla"/>
-    <flickr in="00:01:21:00" out="00:01:27:00" target="flickrinfo" userid="54210095@N08" numberofimages="4" padding="4px"/>
-    <twitter in="00:01:45:00" out="00:01:52:00" title="popcorn-js" source="popcorn-js" target="twitterinfo" width="238" height="120"/>
-    <webpage in="00:01:38:00" out="00:01:44:00" target="iframeinfo" width="1000" height="500" src="http://www.chip.ro/stiri/14548-popcorn_de_la_mozilla__o_noua_dimensiune_video.html" description="Chip Online"></webpage>
-    <image in="00:00:12:00" out="00:00:15:00" src="team.jpg" width="450" height="334" target="imageinfo"/>
-    <webpage in="00:01:52:00" target="iframeinfoTop" width="1000" height="200" src="http://webmademovies.org" description="WebMadeMovies"></webpage>
+    <flickr in="00:01:21:00" out="00:01:27:00" target="flickrinfo" userid="54210095@N08" numberofimages="4" height="125" width="80" padding="8px"/>
+    <twitter in="00:01:45:00" out="00:01:52:00" title="&lt;b&gt;popcorn-js&lt;/b&gt;" source="popcorn-js" target="twitterinfo" width="330" height="120"/>
+    <webpage in="00:01:38:00" out="00:01:45:00" target="iframeinfo" width="834" height="500" src="http://www.chip.ro/stiri/14548-popcorn_de_la_mozilla__o_noua_dimensiune_video.html" description="Chip Online"></webpage>
+    <image in="00:00:12:00" out="00:00:15:00" src="team.jpg" width="334" height="217" target="imageinfo"/>
+    <webpage in="00:01:53:00" target="iframeinfo" width="834" height="500" src="http://webmademovies.org" description="WebMadeMovies"></webpage>
     
 	</timeline>
 </popcorn>
