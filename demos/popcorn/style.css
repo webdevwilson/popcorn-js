@@ -22,18 +22,17 @@ body{
 }
 
 .left-content{
-  width:480px;
+  width:400px;
   float: left;
 }
 .right-content{
   float: left;
-  width:534px;
+  width:380px;
   padding-left: 20px;
   padding-top: 0px;
 }
 .full-content{
-  float: left;
-  width:934px;
+  width:790px;
 }
 .video-div{
   position:relative;
@@ -41,6 +40,7 @@ body{
   margin-bottom: 15px;
   margin-right: 15px;
   clear: both;
+  font-size: 15px !important;
 }
 
 h1{
@@ -52,7 +52,7 @@ h1{
   background-image: -moz-linear-gradient(top, #3d96c0, #1a729b);/* Firefox 3.6 */
   background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #1a729b),color-stop(1, #3d96c0));/* Safari & Chrome */
   padding: 5px 20px 6px 12px;
-  min-width:290px;
+  min-width:325px;
   font-size:15px;
   color: #FFF;
   font-weight: normal;

@@ -18,22 +18,26 @@
     <!-- Start Left Contents -->
     <div class="left-content">
       <!-- Start Video Div -->
+      <br />
       <div id="videoContainer" class="video-div">
-        <video src="http://scotland.proximity.on.ca/sdowne/popcornFinal3.ogg" data-timeline-sources="xml/data.xml" width="480" height="270" controls></video>
+        <video src="demo.ogg" data-timeline-sources="xml/data.xml" height="300" width="410" controls></video>
       </div>
-      <div class="video-info">
+      <div id="translateinfo"style="z-index:2;position:absolute;color:white;textShadow:black 2px 2px 6px;font-size:17px;font-weight:bold;align:center;top: 240px;left:8px;"></div>
+      <div id="translateinfofrench" style="z-index:2;position:absolute;color:white;textShadow:black 2px 2px 6px;font-size:17px;font-weight:bold;align:center;top: 260px;left:8px;"></div>
+      
+      <div class="video-info" style="display:none">
         <!-- Start Choose Language -->
         <div class="choose-language">
           <h2>Choose your language</h2>
           <select id="language">
               <option value="zh">Chinese</option>
-              <option value="fr">French</option>
+              <option value="fr" selected="selected">French</option>
               <option value="de">German</option>
               <option value="it">Italian</option>
               <option value="ja">Japanese</option>
               <option value="ko">Korean</option>
               <option value="fa">Persian</option>
-              <option value="pl" selected="selected">Polish</option>
+              <option value="pl">Polish</option>
               <option value="pt">Portuguese</option>
               <option value="es">Spanish</option>
           </select>
@@ -45,36 +49,30 @@
         </div>
         <!-- End Choose Language -->
       </div>
-      <br />
       <!-- End Video Info -->
-      <div style=":top:400px;background:white;width:480px;height:80px;font:15px arial,sans-serif;text-align:left;padding-left:4px;">
-        <h1>Google Translation:</h1><br />
-        <div id="translateinfo" ></div>
+      <div id="attribinfo" style="display:none;background:white;width:409px;height:100px;text-align:left;padding-left:4px;"></div>  
       </div><br />
-      <div id="attribinfo" style="display:none;background:white;width:480px;height:100px;text-align:left;padding-left:4px;"></div>  
       
     </div><!-- End Video Div -->
     <div class="right-content">
       <h1>Google Maps</h1>
-      <div id="mapinfo" style="width:330px;height:200px" ></div>     
+      <div id="mapinfo" style="width:380px;height:250px" ></div>     
       <br />
-      <div id="googlenewsinfo" style="display:none;top:330px;background:white;width:330px;height:100px;text-align:left;">
-        <h1>Google News</h1>
-      </div>
-      <div id="imageinfo" style="display:none;top:330px;width:330px;height:100px;text-align:left;"> <!--needed for imageCommand -->
+      <div id="imageinfo" style="display:none;top:330px;width:380px;text-align:left;"> <!--needed for imageCommand -->
         <h1>Popcorn-js Team</h1>
       </div>
-      <div id="wikiinfo" style="display:none;top:400px;background:white;width:330px;height:220px;text-align:left;padding-left:4px;">
+      <div id="wikiinfo" style="display:none;top:400px;background:white;width:380px;height:220px;text-align:left;padding-left:4px;">
         <h1>Wikipedia</h1>
       </div>
       <div id="flickrinfo" style="display:none;top:330px;color:white;background:white;width:330px;height:100px;text-align:left;">
         <h1>Flickr</h1>
       </div>
-      <div id="twitterinfo" style="display:none;top:330px;color:white;background:white;width:330px;height:100px;text-align:left;align:left">
+      <div id="twitterinfo" style="display:none;top:330px;color:white;background:white;width:380px;height:100px;text-align:left;align:left">
       <br />
       </div>
       
     </div>
+    <br />
     <div class="full-content">
     
        <div id="iframeinfo"></div>

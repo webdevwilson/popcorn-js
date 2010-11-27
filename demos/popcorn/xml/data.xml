@@ -1,54 +1,77 @@
 <popcorn>
 	<timeline>
-    <subtitles language="en" >
-		  <subtitle in="00:00:00:00" out="00:00:03:00">My name is Anna and I am one of the lead developers of</subtitle>
-		  <subtitle in="00:00:03:00" out="00:00:08:00">popcorn.js a tool that Wired Magazine said "makes web video</subtitle>
-		  <subtitle in="00:00:08:00" out="00:00:11:00">every bit as interactive as the rest of the web."</subtitle>
-		  <subtitle in="00:00:11:00" out="00:00:15:00">My team and I started working on popcorn-js this summer</subtitle>
-		  <subtitle in="00:00:15:00" out="00:00:19:00">at the Mozilla Corporation headquarters in Toronto Ontario</subtitle>
-		  <subtitle in="00:00:20:00" out="00:00:23:00">Mozilla makes the popular Firefox Web Browser,</subtitle>
-		  <subtitle in="00:00:23:00" out="00:00:26:00">and tools to help people use the web</subtitle>
-		  <subtitle in="00:00:26:00" out="00:00:28:00">to make other technologies.</subtitle>
-		  <subtitle in="00:00:28:00" out="00:00:33:00">Popcorn.js is a JavaScript library for timing video with metadata.</subtitle>
-		  <subtitle in="00:00:33:00" out="00:00:34:00">What is metadata?</subtitle>
-		  <subtitle in="00:00:35:00" out="00:00:39:00">Maybe your video references an article, and you'd like to show</subtitle>
-		  <subtitle in="00:00:39:00" out="00:00:43:00">it, or maybe you're talking about a place and you'd like to </subtitle>
-		  <subtitle in="00:00:43:00" out="00:00:44:00">show it on a map.</subtitle>
-		  <subtitle in="00:00:45:00" out="00:00:50:00">You can pause this video to read more about metadata on </subtitle>
-		  <subtitle in="00:00:50:00" out="00:00:54:00">the wiki. Popcorn.js uses metadata to augment the video  </subtitle>
-		  <subtitle in="00:00:55:00" out="00:01:00:00">experience in real time, mixing the video and web into a more rich </subtitle>
-      <subtitle in="00:01:00:00" out="00:01:06:00">story telling tool. Not only can you use it to show how relevant </subtitle>
-      <subtitle in="00:01:06:00" out="00:01:09:00">the topic of the video is in relation to the news, </subtitle>
-      <subtitle in="00:01:09:00" out="00:01:14:00">lets say Google News. but you can also personalize it </subtitle>
-      <subtitle in="00:01:15:00" out="00:01:17:00">giving the viewer some background about the filmmaker.</subtitle>
-      <subtitle in="00:01:18:00" out="00:01:21:00">Perhaps the filmmaker has other videos or pictures</subtitle>
-      <subtitle in="00:01:21:00" out="00:01:26:00">you would be interested in seeing posted on their Flickr account.</subtitle>
-      <subtitle in="00:01:27:00" out="00:01:30:00">Since we released popcorn.js we have been </subtitle>
-      <subtitle in="00:01:30:00" out="00:01:32:00">featured in a lot of online articles, </subtitle>
-      <subtitle in="00:01:32:00" out="00:01:37:00">like Wired‘s WebMonkey.com, and Gizmodo. Let me show you</subtitle>
-      <subtitle in="00:01:38:00" out="00:01:43:00">one from Chip Online this is a Romanian magazine.</subtitle>
-      <subtitle in="00:01:45:00" out="00:01:47:00">Similarly, let’s see what people are saying</subtitle>
-      <subtitle in="00:01:47:00" out="00:01:50:00">about popcorn-js on twitter.</subtitle>
-      <subtitle in="00:01:52:00" out="00:01:58:00">To learn more about popcorn-js take a look at our homepage,</subtitle>
-      <subtitle in="00:01:58:00" out="00:01:59:00">all the links and demos you will ever need</subtitle>
-      <subtitle in="00:01:59:00" >are just above me.</subtitle>
+    <subtitles language="en" target="translateinfo">
+		  <subtitle in="00:00:00:00" out="00:00:02:00">I am one of the lead developers of </subtitle>
+		  <subtitle in="00:00:02:00" out="00:00:05:00">popcorn a JavaScript library that adds </subtitle>
+		  <subtitle in="00:00:05:00" out="00:00:07:00">timeline based data to any video.</subtitle>
+		  <subtitle in="00:00:08:00" out="00:00:09:00">I am going to show you what popcorn</subtitle>
+		  <subtitle in="00:00:09:00" out="00:00:12:00">can do. Right now all you see is me</subtitle>
+		  <subtitle in="00:00:12:00" out="00:00:14:00">talking on the screen you can’t really</subtitle>
+		  <subtitle in="00:00:14:00" out="00:00:17:00">do anything but watch. Let’s make this </subtitle>
+		  <subtitle in="00:00:17:00" out="00:00:19:00">video more exciting. Let me add </subtitle>
+		  <subtitle in="00:00:19:00" out="00:00:22:00">some French subtitles. Popcorn uses</subtitle>
+		  <subtitle in="00:00:22:00" out="00:00:24:00">Google Translate to translate subtitles</subtitle>
+		  <subtitle in="00:00:24:00" out="00:00:27:00">to any language. You might be curious</subtitle>
+		  <subtitle in="00:00:27:00" out="00:00:29:00">to know that this video was filmed in</subtitle>
+		  <subtitle in="00:00:29:00" out="00:00:32:00">Toronto, Ontario. If you don’t know </subtitle>
+		  <subtitle in="00:00:32:00" out="00:00:34:00">exactly where that is feel free to </subtitle>
+		  <subtitle in="00:00:34:00" out="00:00:36:00">pause this video and investigate the</subtitle>
+		  <subtitle in="00:00:36:00" out="00:00:39:00">map. Popcorn was built by five people,</subtitle>
+      <subtitle in="00:00:39:00" out="00:00:42:00">there they are. We collaborated with </subtitle>
+      <subtitle in="00:00:42:00" out="00:00:44:00">filmmakers and artists to ensure that</subtitle>
+      <subtitle in="00:00:44:00" out="00:00:47:00">popcorn is easy to use. Let me show</subtitle>
+      <subtitle in="00:00:47:00" out="00:00:49:00">you some other cool features. Keep in</subtitle>
+      <subtitle in="00:00:49:00" out="00:00:51:00">mind that you can have any feature </subtitle>
+      <subtitle in="00:00:51:00" out="00:00:54:00">appear and disappear at any time</subtitle>
+      <subtitle in="00:00:54:00" out="56.5">during the video. Popcorn makes it </subtitle>
+      <subtitle in="56.5" out="00:00:59:00">possible to pull data from twitter.</subtitle>
+      <subtitle in="00:00:59:00" out="00:01:01:00">Let’s see what people are saying </subtitle>
+      <subtitle in="00:01:01:00" out="00:01:02:00">about popcorn right now.</subtitle>
+      <subtitle in="00:01:03:00" out="00:01:04:00">You can also showcase your work </subtitle>
+      <subtitle in="00:01:04:00" out="00:01:07:00">by pulling data from a flicker account.</subtitle>
+      <subtitle in="00:01:07:00" out="00:01:09:00">Here are some pictures I posted.</subtitle>
+      <subtitle in="00:01:09:00" out="00:01:10:00">If you are not quite sure what</subtitle>
+      <subtitle in="00:01:10:00" out="00:01:12:00">Flicker is take a second to read</subtitle>
+      <subtitle in="00:01:12:00" out="00:01:15:00">about it on Wikipedia. To try</subtitle>
+      <subtitle in="00:01:15:00" out="00:01:17:00">out popcorn visit our homepage,</subtitle>
+      <subtitle in="00:01:17:00" >it is displayed just below me. </subtitle>
 	  
     </subtitles>
-    <subtitles language="en" target="translateinfo" languagesrc="language">
-		  <subtitle in="00:00:00:00" out="00:00:03:00">My name is Anna and I am one of the lead developers of</subtitle>
-		  <subtitle in="00:00:03:00" out="00:00:08:00">popcorn.js a tool that Wired Magazine said "makes web video</subtitle>
-		  <subtitle in="00:00:08:00" out="00:00:11:00">every bit as interactive as the rest of the web."</subtitle>
-		  <subtitle in="00:00:11:00" out="00:00:15:00">My team and I started working on popcorn-js this summer</subtitle>
+    <subtitles language="en" target="translateinfofrench" languagesrc="language">
+		  <subtitle in="00:00:19:00" out="00:00:22:00">some French subtitles. Popcorn uses</subtitle>
+		  <subtitle in="00:00:22:00" out="00:00:24:00">Google Translate to translate subtitles</subtitle>
+		  <subtitle in="00:00:24:00" out="00:00:27:00">to any language. You might be curious</subtitle>
+		  <subtitle in="00:00:27:00" out="00:00:29:00">to know that this video was filmed in</subtitle>
+		  <subtitle in="00:00:29:00" out="00:00:32:00">Toronto, Ontario. If you don’t know </subtitle>
+		  <subtitle in="00:00:32:00" out="00:00:34:00">exactly where that is feel free to </subtitle>
+		  <subtitle in="00:00:34:00" out="00:00:36:00">pause this video and investigate the</subtitle>
+		  <subtitle in="00:00:36:00" out="00:00:39:00">map. Popcorn was built by five people,</subtitle>
+      <subtitle in="00:00:39:00" out="00:00:42:00">there they are. We collaborated with </subtitle>
+      <subtitle in="00:00:42:00" out="00:00:44:00">filmmakers and artists to ensure that</subtitle>
+      <subtitle in="00:00:44:00" out="00:00:47:00">popcorn is easy to use. Let me show</subtitle>
+      <subtitle in="00:00:47:00" out="00:00:49:00">you some other cool features. Keep in</subtitle>
+      <subtitle in="00:00:49:00" out="00:00:51:00">mind that you can have any feature </subtitle>
+      <subtitle in="00:00:51:00" out="00:00:54:00">appear and disappear at any time</subtitle>
+      <subtitle in="00:00:54:00" out="56.5">during the video. Popcorn makes it </subtitle>
+      <subtitle in="56.5" out="00:00:59:00">possible to pull data from twitter.</subtitle>
+      <subtitle in="00:00:59:00" out="00:01:01:00">Let’s see what people are saying </subtitle>
+      <subtitle in="00:01:01:00" out="00:01:02:00">about popcorn right now.</subtitle>
+      <subtitle in="00:01:03:00" out="00:01:04:00">You can also showcase your work </subtitle>
+      <subtitle in="00:01:04:00" out="00:01:07:00">by pulling data from a flicker account.</subtitle>
+      <subtitle in="00:01:07:00" out="00:01:09:00">Here are some pictures I posted.</subtitle>
+      <subtitle in="00:01:09:00" out="00:01:10:00">If you are not quite sure what</subtitle>
+      <subtitle in="00:01:10:00" out="00:01:12:00">Flicker is take a second to read</subtitle>
+      <subtitle in="00:01:12:00" out="00:01:15:00">about it on Wikipedia. To try</subtitle>
+      <subtitle in="00:01:15:00" out="00:01:17:00">out popcorn visit our homepage,</subtitle>
+      <subtitle in="00:01:17:00" >it is displayed just below me. </subtitle>
     </subtitles>
     <attribution in="00:00:06:00" out="00:00:11:00" target="attribinfo" nameofwork="&lt;h1&gt;Copyright Information&lt;/h1&gt;&lt;br /&gt;Mozillas Popcorn Project Adds Extra Flavor to Web Video" copyrightholder="http://www.webmonkey.com"></attribution>
-    <location in="00:00:16:00" out="00:00:20:00" long="-79.403323" lat="43.665429" target="mapinfo" zoom="16"/>
-    <wiki in="00:00:46:00" out="00:00:51:00" src="http://en.wikipedia.org/wiki/Metadata" description="Metadata" numberOfWords="250" lang="en" target="wikiinfo"/>
-    <googlenews in="00:01:09:00" out="00:01:14:00" target="googlenewsinfo" topic="mozilla"/>
-    <flickr in="00:01:21:00" out="00:01:27:00" target="flickrinfo" userid="54210095@N08" numberofimages="4" height="125" width="80" padding="8px"/>
-    <twitter in="00:01:45:00" out="00:01:52:00" title="&lt;b&gt;popcorn-js&lt;/b&gt;" source="popcorn-js" target="twitterinfo" width="330" height="120"/>
-    <webpage in="00:01:38:00" out="00:01:45:00" target="iframeinfo" width="834" height="500" src="http://www.chip.ro/stiri/14548-popcorn_de_la_mozilla__o_noua_dimensiune_video.html" description="Chip Online"></webpage>
-    <image in="00:00:12:00" out="00:00:15:00" src="team.jpg" width="334" height="217" target="imageinfo"/>
-    <webpage in="00:01:53:00" target="iframeinfo" width="834" height="500" src="http://webmademovies.org" description="WebMadeMovies"></webpage>
+    <location in="00:00:29:00"  long="-79.403323" lat="43.665429" target="mapinfo" zoom="16"/>
+    <wiki in="00:01:12:00" out="00:01:15:00" src="http://en.wikipedia.org/wiki/Metadata" description="Metadata" numberOfWords="250" lang="en" target="wikiinfo"/>
+    <flickr in="00:01:06:00" out="00:01:10:00" target="flickrinfo" userid="54210095@N08" numberofimages="3" height="125" width="80" padding="8px"/>
+    <twitter in="00:00:59:00" out="00:01:05:00" title="&lt;b&gt;popcorn-js&lt;/b&gt;" source="popcorn-js" target="twitterinfo" width="380" height="120"/>
+    <image in="00:00:40:00" out="00:00:50:00" src="team.jpg" width="380"  target="imageinfo"/>
+    <webpage in="00:01:15:00" target="iframeinfo" width="790" height="500" src="http://webmademovies.org" description="WebMadeMovies"></webpage>
     
 	</timeline>
 </popcorn>
