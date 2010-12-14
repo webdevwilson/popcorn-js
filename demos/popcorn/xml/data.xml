@@ -65,13 +65,12 @@
       <subtitle in="00:01:15:00" out="00:01:17:00">out popcorn visit our homepage,</subtitle>
       <subtitle in="00:01:17:00" >it is displayed just below me. </subtitle>
     </subtitles>
-    <attribution in="00:00:06:00" out="00:00:11:00" target="attribinfo" nameofwork="&lt;h1&gt;Copyright Information&lt;/h1&gt;&lt;br /&gt;Mozillas Popcorn Project Adds Extra Flavor to Web Video" copyrightholder="http://www.webmonkey.com"></attribution>
     <location in="00:00:29:00"  long="-79.403323" lat="43.665429" target="mapinfo" zoom="16"/>
     <wiki in="00:01:12:00" out="00:01:15:00" src="http://en.wikipedia.org/wiki/Metadata" description="Metadata" numberOfWords="250" lang="en" target="wikiinfo"/>
-    <flickr in="00:01:06:00" out="00:01:10:00" target="flickrinfo" userid="54210095@N08" numberofimages="3" height="125" width="80" padding="8px"/>
-    <twitter in="00:00:59:00" out="00:01:05:00" title="&lt;b&gt;popcorn-js&lt;/b&gt;" source="popcorn-js" target="twitterinfo" width="380" height="120"/>
-    <image in="00:00:40:00" out="00:00:50:00" src="team.jpg" width="380"  target="imageinfo"/>
-    <webpage in="00:01:15:00" target="iframeinfo" width="790" height="500" src="http://webmademovies.org" description="WebMadeMovies"></webpage>
+    <flickr in="00:01:06:00" out="00:01:10:00" target="flickrinfo" userid="54210095@N08" numberofimages="3" height="80" width="115" padding="8px"/>
+    <twitter in="00:00:59:00" out="00:01:05:00" title="&lt;b&gt;popcorn-js&lt;/b&gt;" source="popcorn-js" target="twitterinfo" width="400" height="120"/>
+    <image in="00:00:40:00" out="00:00:50:00" src="team.jpg" width="400"  target="imageinfo"/>
+    <webpage in="00:01:15:00" target="iframeinfo" width="920" height="200" src="http://webmademovies.org" description="WebMadeMovies"></webpage>
     
 	</timeline>
 </popcorn>

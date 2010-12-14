@@ -22,23 +22,26 @@ body{
 }
 
 .left-content{
-  width:400px;
+  width:520px;
   float: left;
+  padding-left:20px
 }
 .right-content{
   float: left;
-  width:380px;
-  padding-left: 20px;
+  width:400px;
+  padding-left:0px;
   padding-top: 0px;
 }
 .full-content{
-  width:790px;
+  width:960px;
+  padding-left:20px;
 }
 .video-div{
   position:relative;
   border-style: "groove";
-  margin-bottom: 15px;
-  margin-right: 15px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 45px;
   clear: both;
   font-size: 15px !important;
 }
@@ -52,7 +55,7 @@ h1{
   background-image: -moz-linear-gradient(top, #3d96c0, #1a729b);/* Firefox 3.6 */
   background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #1a729b),color-stop(1, #3d96c0));/* Safari & Chrome */
   padding: 5px 20px 6px 12px;
-  min-width:325px;
+  min-width:365px;
   font-size:15px;
   color: #FFF;
   font-weight: normal;
