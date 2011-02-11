@@ -5,15 +5,15 @@ var googleCallback;
   /**
    * googlemap popcorn plug-in 
    * Adds a map to the target div centered on the location specified by the user
-   * Options parameter will need a start, end, target, type, zoom, lat and lng, and location
+   * Options parameter will need a start, end, target, type, zoom, lat and long, and location
    * -Start is the time that you want this plug-in to execute
    * -End is the time that you want this plug-in to stop executing 
    * -Target is the id of the DOM element that you want the map to appear in. This element must be in the DOM
    * -Type [optional] either: HYBRID (default), ROADMAP, SATELLITE, TERRAIN 
    * -Zoom [optional] defaults to 0
-   * -Lat and Lng: the coordinates of the map must be present if location is not specified.
+   * -Lat and Long: the coordinates of the map must be present if location is not specified.
    * -Location: the adress you want the map to display, bust be present if lat and log are not specified.
-   *  Note: using location requires extra loading time, also not specifying both lat/lng and location will
+   *  Note: using location requires extra loading time, also not specifying both lat/long and location will
    * cause and error. 
    * @param {Object} options
    * 
@@ -25,7 +25,7 @@ var googleCallback;
           type: 'ROADMAP',
           target: 'map',
           lat: 43.665429,
-          lng: -79.403323
+          long: -79.403323
         } )
    *
    */
@@ -45,11 +45,13 @@ var googleCallback;
           start    : {elem:'input', type:'text', label:'In'},
           end      : {elem:'input', type:'text', label:'Out'},
           target   : 'map-container',
-          type     : {elem:'select', options:['ROADMAP','SATELLITE', 'HYBRID', 'TERRAIN'], label:'Type'},
+          type     : {elem:'select', type:'text', label:'Type'},
           zoom     : {elem:'input', type:'text', label:'Zoom'},
           lat      : {elem:'input', type:'text', label:'Lat'},
-          lng     : {elem:'input', type:'text', label:'Lng'},
-          location : {elem:'input', type:'text', label:'Location'}
+          long     : {elem:'input', type:'text', label:'Long'},
+          location : {elem:'input', type:'text', label:'Location'},
+		  heading  : {elem:'input', type:'text', label:'Heading'},
+		  pitch    : {elem:'input', type:'text', label:'Pitch'}
         }
       },
       _setup : function( options ) {
@@ -79,7 +81,7 @@ var googleCallback;
         googleCallback = function() {
           _mapLoaded    = true;
         };
-        // If there is no lat/lng, and there is location, geocode the location
+        // If there is no lat/long, and there is location, geocode the location
         // you can only do this once google.maps exists
         var isGeoReady = function() {
           if ( !_mapLoaded ) {
@@ -93,16 +95,16 @@ var googleCallback;
               geocoder.geocode({ 'address': options.location}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                   options.lat  = results[0].geometry.location.lat();
-                  options.lng = results[0].geometry.location.lng(); 
-                  options._location = new google.maps.LatLng(options.lat, options.lng);
-                  options._map = new google.maps.Map(options._newdiv, {mapTypeId: google.maps.MapTypeId[options.type] || google.maps.MapTypeId.HYBRID }); 
-                  options._map.getDiv().style.display = 'none';
+                  options.long = results[0].geometry.location.lng(); 
+                  options._location = new google.maps.LatLng(options.lat, options.long);
+				  options._map = new google.maps.Map(options._newdiv, {mapTypeId: google.maps.MapTypeId[options.type] || google.maps.MapTypeId.HYBRID }); 
+				  options._map.getDiv().style.display = 'none';
                 } 
               });
             } else {
-              options._location = new google.maps.LatLng(options.lat, options.lng);
-              options._map = new google.maps.Map(options._newdiv, {mapTypeId: google.maps.MapTypeId[options.type] || google.maps.MapTypeId.HYBRID });  
-              options._map.getDiv().style.display = 'none';
+              options._location = new google.maps.LatLng(options.lat, options.long);
+			  options._map = new google.maps.Map(options._newdiv, {mapTypeId: google.maps.MapTypeId[options.type] || google.maps.MapTypeId.HYBRID });  
+			  options._map.getDiv().style.display = 'none';
             }
           }
         };
@@ -133,9 +135,20 @@ var googleCallback;
             }
             options.zoom = options.zoom || 0; // default to 0
             options._map.setZoom( options.zoom );
-
-            google.maps.event.trigger(options._map, 'resize');
+			
+			if(options.type === 'STREETVIEW'){
+			var streetViewOptions = { 
+							position: options._location,
+							pov: {
+							heading: options.heading,
+							pitch: options.pitch,
+							zoom: options.zoom
+							}
+						};
+					var streetView = new  google.maps.StreetViewPanorama(options._newdiv, streetViewOptions);
           }
+		  options._map.setStreetView(streetView);
+		  }
         };
         
         isReady();
