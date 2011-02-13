@@ -52,8 +52,8 @@ var googleCallback;
           lat      : {elem:'input', type:'text', label:'Lat'},
           lng      : {elem:'input', type:'text', label:'Lng'},
           location : {elem:'input', type:'text', label:'Location'},
-		  heading  : {elem:'input', type:'text', label:'Heading'},
-		  pitch    : {elem:'input', type:'text', label:'Pitch'}
+          heading  : {elem:'input', type:'text', label:'Heading'},
+          pitch    : {elem:'input', type:'text', label:'Pitch'}
         }
       },
       _setup : function( options ) {
@@ -139,19 +139,19 @@ var googleCallback;
             options._map.setZoom( options.zoom );
 
             google.maps.event.trigger(options._map, 'resize');
-			
-			if(options.type === 'STREETVIEW'){
-			var streetViewOptions = {
-			  position: options._location,
-			  pov: {
-			    heading: options.heading,
-				pitch: options.pitch,
-				zoom: options.zoom
-				}
-			  };
-			  var streetView = new  google.maps.StreetViewPanorama(options._newdiv, streetViewOptions);
-			}
-			options._map.setStreetView(streetView);
+            
+            if( options.type === "STREETVIEW" ){
+              var streetViewOptions = {
+              position: options._location,
+              pov: {
+                heading: options.heading,
+                pitch: options.pitch,
+                zoom: options.zoom
+                }
+              };
+            var streetView = new  google.maps.StreetViewPanorama( options._newdiv, streetViewOptions );
+            }
+            options._map.setStreetView( streetView );
           }
         };
         
