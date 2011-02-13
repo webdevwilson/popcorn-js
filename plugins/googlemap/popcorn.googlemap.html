@@ -30,6 +30,17 @@
 		heading: 0,
 		pitch: 10
       } )
+	  .googlemap({
+        start: 0, // seconds
+        end: 20, // seconds
+        type: 'STREETVIEW',
+        target: 'map1',
+        lat: 43.665429,
+        lng: -79.403323,
+        zoom: "1",
+		heading: 0,
+		pitch: 0
+      } )
       .googlemap({
         start: 0, // seconds
         end: 30, // seconds
@@ -44,7 +55,7 @@
 <body>
   <h1 id="qunit-header">Popcorn google Map Plug-in Demo</h1>
   <p> A Google Map displaying Toronto, Ontario will appear at 0 seconds and disappear at 20 seconds.</p>
-  <p> A Google street view Map displaying Toronto, Ontario will appear at 0 seconds and disappear at 20 seconds.</p>
+  <p> A Google StreetView Map displaying Toronto, Ontario will appear at 0 seconds and disappear at 20 seconds.</p>
   <p> A Google Map displaying Boston will appear at 0 seconds and disappear at 30 seconds.</p>
   <div>
     <video id='video' 
