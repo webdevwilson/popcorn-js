@@ -6,13 +6,18 @@
   <script src="jquery.js"></script>
 
   
-  <script src="qunit/qunit.js"></script>
+   <script src="qunit/qunit.js"></script>
   <!-- 
     do not move - this must be called immediately prior to 
     popcorn-api-draft.js
   -->
   <script src="popcorn.unit.setup.js"></script>
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('video').muted = true;
+      document.getElementById('audio').muted = true;
+      },false);
+  </script>
   <script src="../popcorn.js"></script>
   <script src="popcorn.unit.js"></script>
 </head>
