@@ -1,0 +1,234 @@
+<!doctype html>
+
+<html>
+
+  <head>
+  	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+  	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  	<script src="../../popcorn.js"></script>
+  	<script src="../../plugins/flickr/popcorn.flickr.js"></script>
+  	<script src="../../plugins/googlemap/popcorn.googlemap.js"></script>
+  	<script src="../../plugins/googlenews/popcorn.googlenews.js"></script>
+  	<script src="../../plugins/facebook/popcorn.facebook.js"></script>
+  	<script src="../../players/baseplayer/popcorn.baseplayer.js"></script>
+  	<script src="../../players/youtube/popcorn.youtube.js"></script>
+  	<script type="text/javascript" src="js/script.js"></script>
+  	
+	<script>
+    	//ensure the web page (DOM) has loaded
+		document.addEventListener( "DOMContentLoaded", function() {
+			
+				// pause button
+			var pauseButton = document.getElementById("btnTogglePause"),
+				// needed to display and hide the first youtube video when appropriate
+				youtubeVideo1 = document.getElementById("youtube-video-1"),
+				youtubeVideo2 = document.getElementById("youtube-video-2"),
+				youtubeVideo3 = document.getElementById("youtube-video-3"),
+				youtubeVideo4 = document.getElementById("youtube-video-4"),
+				youtubeVideo5 = document.getElementById("youtube-video-5"),
+				youtubeVideo6 = document.getElementById("youtube-video-6"),
+				// current time of the main timeline
+				timing        = document.getElementById("player-time"),
+				// basic player used for main timeline
+				player = Popcorn.baseplayer();
+			/* MAKE YOUTUBE VIDEOS HERE */
+			
+			var youtube1 = Popcorn(Popcorn.youtube( "youtube-video-1",
+                "http://youtu.be/81wv_w6_Z8M",
+                {  width: 300,
+                   height: 300
+				}
+                )
+            ).exec( 68, function() {
+				youtube1.pause();
+				youtubeVideo1.style.display = "none";
+				mainTimeline.play();
+            });
+            var youtube2 = Popcorn(Popcorn.youtube( "youtube-video-2",
+                "http://youtu.be/rUJ1bm_Ih60",
+                {  width: 300,
+                   height: 300
+				}
+                )
+            ).exec( 30, function() {
+            	youtube2.pause();
+				youtubeVideo2.style.display = "none";
+				mainTimeline.play();
+            });
+            var youtube3 = Popcorn(Popcorn.youtube( "youtube-video-3",
+                "http://youtu.be/HRFPWWoxpro",
+                {  width: 300,
+                   height: 300
+				}
+                )
+            ).exec( 103, function() {
+				youtube3.pause();
+				youtubeVideo3.style.display = "none";
+				mainTimeline.play();
+            });
+            var youtube4 = Popcorn(Popcorn.youtube( "youtube-video-4",
+                "http://youtu.be/HRFPWWoxpro",
+                {  width: 300,
+                   height: 300
+				}
+                )
+            ).exec( 20, function() {
+				youtube4.pause();
+				youtubeVideo4.style.display = "none";
+				mainTimeline.play();
+            });
+            var youtube5 = Popcorn(Popcorn.youtube( "youtube-video-4",
+                "http://youtu.be/HRFPWWoxpro",
+                {  width: 300,
+                   height: 300
+				}
+                )
+            ).exec( 138, function() {
+				youtube5.pause();
+				youtubeVideo5.style.display = "none";
+				mainTimeline.play();
+            });
+            var youtube6 = Popcorn(Popcorn.youtube( "youtube-video-4",
+                "http://youtu.be/HRFPWWoxpro",
+                {  width: 300,
+                   height: 300
+				}
+                )
+            ).exec( 120, function() {
+				youtube6.pause();
+				youtubeVideo6.style.display = "none";
+				mainTimeline.play();
+            });
+			
+			/* MAIN TIMELINE - just a basic counter */
+			// DOM element associated with basic player and main timeline
+			player._resource = document.getElementById('timeline');
+			// The ready state and resource selection would be handled by the player extending this base player
+			player.readyState = 2;
+			
+			// the actual mai timeline as a popcorn instance
+			var mainTimeline = Popcorn( player );
+			
+			/* MAIN TIMELINE events */
+			// main timeline in and out for first youtube video
+			// make the video visible and play at 0 seconds
+			mainTimeline.exec( 0, function() {
+				youtube3.currentTime(10);
+				youtube1.play();
+				youtubeVideo1.setAttribute("style","display:inline");
+				mainTimeline.pause();
+			}).exec( 99, function() {
+				youtube3.currentTime(0);
+				youtube2.play();
+				youtubeVideo2.setAttribute("style","display:inline");
+				mainTimeline.pause();
+			}).exec( 89, function() {
+				youtube3.currentTime(87);
+				youtube3.play();
+				youtubeVideo3.setAttribute("style","display:inline");
+				mainTimeline.pause();
+			}).exec( 105, function() {
+				youtube4.currentTime(0);
+				youtube4.play();
+				youtubeVideo4.setAttribute("style","display:inline");
+				mainTimeline.pause();
+			}).exec( 125, function() {
+				youtube5.currentTime(119);
+				youtube5.play();
+				youtubeVideo5.setAttribute("style","display:inline");
+				mainTimeline.pause();
+			}).exec( 142, function() {
+				youtube6.currentTime(23);
+				youtube6.play();
+				youtubeVideo6.setAttribute("style","display:inline");
+				mainTimeline.pause();
+			}).flickr({
+				start: 0,
+				end:   115,
+				tag:    "brucespringsteen",	
+				userid: "26981605@N08",
+				target: "mainbody",
+				numberofimages: 5
+			}).flickr({
+				start: 10,
+				end:   80,
+				tag:    "milwaukee",	
+				userid: "26981605@N08",
+				target: "mainbody",
+				numberofimages: 2
+			}).flickr({
+				start: 30,
+				end:   60,
+				tag:    "lennox",	
+				userid: "26981605@N08",
+				target: "mainbody",
+				numberofimages: 1
+			}).flickr({
+				start: 80,
+				end:   160,
+				tag:    "springsteen",	
+				userid: "7675314@N08",
+				target: "mainbody",
+				numberofimages: 8
+			}).googlemap({
+				start: 0, // seconds
+				end: 20, // seconds
+				type: "STREETVIEW",
+				target: "map",
+				lat: 43.665429,
+				lng: -79.403323,
+				zoom: "1",
+				heading: "0",
+				pitch: "1"
+		  } ).facebook({
+				href  : "http://www.facebook.com/pages/Clarence-Clemons/91141977179",
+				type  : "FACEPILE",
+				target: "facebook",
+				width : 300,
+				start : 0,//80,
+				end   : 200
+		  } ).googlenews({
+				start: 0,//100, // seconds
+				end: 300, // seconds
+				topic: 'Bruce Springsteen Wonder Bar',
+				target: 'google-news'
+		  } ).listen( 'timeupdate', function() {
+				timing.innerHTML = mainTimeline.currentTime();
+			});
+			// start the main timeline automatically
+			mainTimeline.play();
+			
+			/* MAIN TIMELINE UI STUFF */
+			// pause button click event
+			document.getElementById( "btnTogglePause" ).addEventListener( "click", 
+				function() { 
+					if ( mainTimeline.media.paused ) {
+						mainTimeline.play();
+						pauseButton.innerHTML = "Pause";
+					} else {
+						mainTimeline.pause(); 
+						pauseButton.innerHTML = "Play";
+					}
+			}, false ); // end pause button click event
+	        		
+		}, false);//$("[data-autocomplete]").autocomplete({ source: friendArray });
+    </script>
+  </head>
+  <body id="mainbody">
+    <!-- div timeline needed for main timeline -->
+    <div id="timeline" style="display:none" ></div>
+    <!-- button simple needed for play and pause of main timeline -->
+    <button class="simple" id="btnTogglePause">Pause</button><span id="player-time"></span><br />
+    <!-- div youtube1 needed for the first youtube video -->
+    <div id="youtube-video-1" style="display:none;" class="polaroid"></div>
+    <div id="youtube-video-2" style="display:none;" class="polaroid"></div>
+    <div id="youtube-video-3" style="display:none;" class="polaroid"></div>
+    <div id="youtube-video-4" style="display:none;" class="polaroid"></div>
+    <div id="youtube-video-5" style="display:none;" class="polaroid"></div>
+    <div id="youtube-video-6" style="display:none;" class="polaroid"></div>
+    <div id="map" ></div>
+    <div id="facebook" class="polaroid"></div>
+    <div id="google-news" class="polaroid"></div>
+  </body>
+
+</html>

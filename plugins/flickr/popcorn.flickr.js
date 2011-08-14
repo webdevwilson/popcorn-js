@@ -41,8 +41,8 @@
    *
    */
 
-  var idx = 0;
-
+  // ** moves some stuff lower
+ var idx = 0;
   Popcorn.plugin( "flickr" , function( options ) {
     var containerDiv,
         _userid,
@@ -53,24 +53,24 @@
         _height = options.height || "50px",
         _width = options.width || "50px",
         _padding = options.padding || "5px",
-        _border = options.border || "0px";
+        _border = options.border || "0px",
+        targetarray = [];
 
-    // create a new div this way anything in the target div is left intact
-    // this is later populated with Flickr images
-    containerDiv = document.createElement( "div" );
-    containerDiv.id = "flickr" + idx;
-    containerDiv.style.width = "100%";
-    containerDiv.style.height = "100%";
-    containerDiv.style.display = "none";
-    idx++;
     
     // ensure the target container the user chose exists
-    if ( document.getElementById( options.target ) ) {
-      document.getElementById( options.target ).appendChild( containerDiv );
-    } else { 
+    var target = document.getElementById( options.target );
+    if ( !target) {
       throw ( "flickr target container doesn't exist" );
     }
-    
+    for( var i = 0; i< _count; i++, idx++){
+		// this is later populated with Flickr images
+		containerDiv = document.createElement( "div" );
+		containerDiv.id = "flickr" + idx;
+		containerDiv.style.display = "none";
+		containerDiv.className = "polaroid";
+		target.appendChild(containerDiv);
+		targetarray.push("flickr" + idx);
+    }
     // get the userid from Flickr API by using the username and apikey
     var isUserIDReady = function() {
       if ( !_userid ) {
@@ -100,24 +100,19 @@
       }
       _uri += "lang=en-us&format=json&jsoncallback=flickr";
       Popcorn.xhr.getJSONP( _uri, function( data ) {
-        containerDiv.innerHTML = "<p style='padding:" + _padding + ";'>" + data.title + "<p/>";
+        //containerDiv.innerHTML = "<p style='padding:" + _padding + ";'>" + data.title + "<p/>";
         
         Popcorn.forEach( data.items, function ( item, i ) {
           if ( i < _count ) {
-
-            _link = document.createElement( 'a' );
-            _link.setAttribute( 'href', item.link );
-            _link.setAttribute( "target", "_blank" );
             _image = document.createElement( 'img' );
             _image.setAttribute( 'src', item.media.m );
             _image.setAttribute( 'height',_height );
             _image.setAttribute( 'width', _width );
             _image.setAttribute( 'style', 'border:' + _border + ';padding:' + _padding );
-            _link.appendChild( _image );         
-            containerDiv.appendChild( _link );
+            // go threw the targetarray and append the newly loaded image
+            document.getElementById(targetarray[i]).appendChild( _image );
 
           } else {
-
             return false;
           }
         });
@@ -139,7 +134,9 @@
        * options variable
        */
       start: function( event, options ) {
-        containerDiv.style.display = "inline";
+      	for( var i = 0; i< targetarray.length; i++) {
+      		document.getElementById(targetarray[i]).style.display = "inline";
+      	}
       },
       /**
        * @member flickr
@@ -148,7 +145,9 @@
        * options variable
        */
       end: function( event, options ) {      
-        containerDiv.style.display = "none";       
+        for( var i = 0; i< targetarray.length; i++) {
+      		document.getElementById(targetarray[i]).style.display = "inline";
+      	}  
       },
       _teardown: function( options ) {
         document.getElementById( options.target ) && document.getElementById( options.target ).removeChild( containerDiv );
