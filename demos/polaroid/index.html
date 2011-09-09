@@ -1,22 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
 
   <head>
+  
+  	<title>Scooter and The Big Man</title>
+	<meta name="description" content="An HTML5 Hypervideo Music Documentary Experience">
+	<meta name="author" content="Deiren Masterson">
+	<meta charset=utf-8 />
+	
   	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
   	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
   	<script src="../../popcorn.js"></script>
+  	<script src="../../effects/applyclass/popcorn.applyclass.js"></script>
+	<script src="../../plugins/twitter/popcorn.twitter.js"></script>
   	<script src="../../plugins/flickr/popcorn.flickr.js"></script>
   	<script src="../../plugins/googlemap/popcorn.googlemap.js"></script>
   	<script src="../../plugins/googlenews/popcorn.googlenews.js"></script>
+
   	<script src="../../plugins/facebook/popcorn.facebook.js"></script>
   	<script src="../../players/baseplayer/popcorn.baseplayer.js"></script>
   	<script src="../../players/youtube/popcorn.youtube.js"></script>
   	<script type="text/javascript" src="js/script.js"></script>
   	
+	
 	<script>
     	//ensure the web page (DOM) has loaded
 		document.addEventListener( "DOMContentLoaded", function() {
+		
+			/* SPLASH PAGE */
+			var playbutton = document.getElementById("playbutton");
+				playbutton.addEventListener( 'click', function(){
+					document.getElementById("play").style.display = "none";
+					document.getElementById("page1").style.display = "inline";
+				}, false );    
 			
 				// pause button
 			var pauseButton = document.getElementById("btnTogglePause"),
@@ -27,6 +45,10 @@
 				youtubeVideo4 = document.getElementById("youtube-video-4"),
 				youtubeVideo5 = document.getElementById("youtube-video-5"),
 				youtubeVideo6 = document.getElementById("youtube-video-6"),
+				youtubeVideo7 = document.getElementById("youtube-video-7"),
+				youtubeVideo8 = document.getElementById("youtube-video-8"),
+				youtubeVideo9 = document.getElementById("youtube-video-9"),
+
 				// current time of the main timeline
 				timing        = document.getElementById("player-time"),
 				// basic player used for main timeline
@@ -34,72 +56,369 @@
 			/* MAKE YOUTUBE VIDEOS HERE */
 			
 			var youtube1 = Popcorn(Popcorn.youtube( "youtube-video-1",
-                "http://youtu.be/81wv_w6_Z8M",
-                {  width: 300,
-                   height: 300
-				}
-                )
-            ).exec( 68, function() {
+                "http://youtu.be/81wv_w6_Z8M", //#1 c l a r e n c e
+                {  width: 345,
+                   height: 280
+				} )
+            ).flickr({
+				start: 41,
+				end:   68,
+				tags:    "clarenceclemons",	
+				userid: "45884643@N00",  //Clarence and Bruce head to head
+				target: "content",
+				numberofimages: 1
+			} ).googlenews({
+				start: 38,//100 seconds 
+				end: 55, // seconds
+				topic: 'Clarence Clemons',
+				target: 'google-news' 
+			}).twitter({
+				start: 35,// seconds
+				end: 68, //seconds
+				title: "Springsteen",
+				src: "#springsteen",
+				target: "twitter"
+			}).googlemap({
+				start: 45, // seconds  New Jersey
+				end: 55, // seconds
+				type: "HYBRID",
+				target: "map",
+				lat:  40.149488,
+				lng: -74.40033,
+				zoom: "7"
+			}).exec( 68, function() {
+				youtube1.currentTime(32);
 				youtube1.pause();
 				youtubeVideo1.style.display = "none";
 				mainTimeline.play();
             });
-            var youtube2 = Popcorn(Popcorn.youtube( "youtube-video-2",
-                "http://youtu.be/rUJ1bm_Ih60",
-                {  width: 300,
-                   height: 300
+            
+           /* var youtube2 = Popcorn(Popcorn.youtube( "youtube-video-2",
+                "http://youtu.be/rUJ1bm_Ih60", //#9  10th ave Freeze Out
+                {  width: 345,
+                   height: 280
 				}
                 )
-            ).exec( 30, function() {
+            ).googlemap({
+				start: 28, // seconds 10th Avenue + Estreet
+				end: 295, // seconds
+				type: "HYBRID",
+				target: "map",
+				lat:  40.179013,
+				lng: -74.02364,
+				zoom: "18",
+				effect: "applyclass",
+				applyclass: "polaroid" 
+				//heading: "0",
+				//pitch: "1"
+			}).flickr({
+				start: 40,
+				end:   80,
+				tags:    "clarenceclemons",	 //clarence & bruce
+				userid: "10359044@N04",
+				target: "content",
+				numberofimages: 3,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).flickr({
+				start: 90,
+				end:   160,
+				tags:    "clarenceclemons",	 //clarence & bruce
+				userid: "64969964@N05",
+				target: "content",
+				numberofimages: 2,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).flickr({
+				start: 190,
+				end:   295,
+				tags:    "clarenceclemmons",	 //clarence and bruce circa mid 70s
+				userid: "42030498@N05",
+				target: "content",
+				numberofimages: 1,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).flickr({
+				start: 170,
+				end:   295,
+				tags:    "brucespringsteensongtitles",	 //Spraypainted wall Asbury Park
+				userid: "29879677@N03",
+				target: "content",
+				numberofimages: 1,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).twitter({
+				start: 50,// seconds
+				end: 295, //seconds
+				title: "Springsteen",
+				src: "#springsteen",
+				target: "twitter" ,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			} ).googlenews({
+				start: 110,//100, // seconds
+				end: 295, // seconds
+				topic: 'clarence clemons Bruce Springsteen',
+				target: 'google-news',
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).exec( 295, function() {
             	youtube2.pause();
 				youtubeVideo2.style.display = "none";
-				mainTimeline.play();
-            });
+				//mainTimeline.play();
+				mainTimeline.pause();
+            }).play().pause();
             var youtube3 = Popcorn(Popcorn.youtube( "youtube-video-3",
-                "http://youtu.be/HRFPWWoxpro",
-                {  width: 300,
-                   height: 300
+                "http://youtu.be/HRFPWWoxpro",  //#2  clarence - wanted to rock
+                {  width: 345,
+                   height: 280
 				}
                 )
-            ).exec( 103, function() {
+			).flickr({
+				start: 98,
+				end:   105,
+				tags:    "clemons",	
+				userid: "98653209@N00",
+				target: "content",
+				effect: "applyclass",
+				applyclass: "polaroid",
+				numberofimages: 1		// clarence sweat into sax
+			}).googlemap({
+				start: 95, // seconds  Asbury Park
+				end: 105, // seconds
+				type: "ROADMAP",
+				target: "map",
+				lat:  40.220994,
+				lng: -74.01211,
+				zoom: "15",
+				//effect: "applyclass",
+				//applyclass: "polaroid" 
+				//heading: "0",
+				//pitch: "1"
+            }).exec( 105, function() {
 				youtube3.pause();
 				youtubeVideo3.style.display = "none";
 				mainTimeline.play();
-            });
+            }).play().pause();
             var youtube4 = Popcorn(Popcorn.youtube( "youtube-video-4",
-                "http://youtu.be/HRFPWWoxpro",
-                {  width: 300,
-                   height: 300
+                "http://youtu.be/wWUPlHR4jBM",  //#3  welcome bruce springsteen
+                {  width: 345,
+                   height: 280
 				}
                 )
-            ).exec( 20, function() {
+            ).exec( 15, function() {
 				youtube4.pause();
 				youtubeVideo4.style.display = "none";
 				mainTimeline.play();
-            });
-            var youtube5 = Popcorn(Popcorn.youtube( "youtube-video-4",
-                "http://youtu.be/HRFPWWoxpro",
-                {  width: 300,
-                   height: 300
+            }).play().pause();
+            var youtube5 = Popcorn(Popcorn.youtube( "youtube-video-5",
+                "http://youtu.be/HRFPWWoxpro",  //#4  karen - bruce bruce
+                {  width: 345,
+                   height: 280
 				}
                 )
-            ).exec( 138, function() {
+			).flickr({
+				start: 119,
+				end:   131,
+				tags:    "karencassidy",	
+				userid: "25221584@N02",  // (Karen Cassidy, Clarence and Joyful Noyze)
+				target: "content",
+				numberofimages: 1,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+            }).googlemap({
+				start: 123, // seconds  Asbury Park
+				end: 131, // seconds
+				type: "HYBRID",
+				target: "map",
+				lat:  40.220994,
+				lng: -74.01211,
+				zoom: "15",
+				//effect: "applyclass",
+				//applyclass: "polaroid" 
+				//heading: "0",
+				//pitch: "1
+			}).exec( 131, function() {
 				youtube5.pause();
 				youtubeVideo5.style.display = "none";
 				mainTimeline.play();
-            });
-            var youtube6 = Popcorn(Popcorn.youtube( "youtube-video-4",
-                "http://youtu.be/HRFPWWoxpro",
-                {  width: 300,
-                   height: 300
+            }).play().pause();
+            var youtube6 = Popcorn(Popcorn.youtube( "youtube-video-6",
+                "http://youtu.be/7dy7RTicVr0",  //#5  growin up
+                {  width: 345,
+                   height: 280
 				}
                 )
-            ).exec( 120, function() {
+            ).googlemap({
+				start: 27, // seconds  Stone Poney
+				end: 77, // seconds
+				type: "STREETVIEW",
+				target: "map",
+				lat:  40.220011,
+				lng: -74.000527,
+				zoom: "1",
+				heading: "270",
+				pitch: "1" ,
+				//effect: "applyclass",
+				//applyclass: "polaroid" 
+			}).flickr({
+				start: 38,
+				end:   77,
+				tags:    "brucespringsteen",	
+				userid: "40283214@N04",
+				target: "content",
+				effect: "applyclass",
+				applyclass: "polaroid",
+				numberofimages: 1	//bruce solo 1975 with guitar	
+			}).flickr({
+				start: 45,
+				end:   77,
+				tags:    "boss",	
+				userid: "10403914@N05",
+				target: "content",
+				effect: "applyclass",
+				applyclass: "polaroid" ,
+				numberofimages: 1	//bruce solo with toque 1970s
+			}).exec( 77, function() {
 				youtube6.pause();
 				youtubeVideo6.style.display = "none";
 				mainTimeline.play();
-            });
+            }).play().pause();
+			var youtube8 = Popcorn(Popcorn.youtube( "youtube-video-8",
+                "http://youtu.be/HRFPWWoxpro",  //#6-- clarence about bruce storm 1st meeting
+                {  width: 345,
+                   height: 280
+				}
+                )
+            ).flickr({
+				start: 141,
+				end:   155,
+				tags:    "nomanseldin1",	
+				userid: "25221584@N02",  // (Norman Seldin, Clarence and Joyful Noyze at piano)
+				target: "content",
+				numberofimages: 1,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+            }).flickr({
+				start: 144,
+				end:   155,
+				tags:    "nomanseldin2",	
+				userid: "25221584@N02",  // (Norman Seldin, Clarence and Joyful Noyze 4 guys pose)
+				target: "content",
+				numberofimages: 1,
+				effect: "applyclass",
+				applyclass: "polaroid" 
+            }).googlemap({
+				start: 147, // seconds  Wonderbar  
+				end: 166, // seconds  
+				type: "STREETVIEW",
+				target: "map",
+				lat:  40.223533,
+				lng: -73.99938,
+				zoom: "2.2",
+				heading: "230",
+				pitch: "1",
+				//effect: "applyclass",
+				//applyclass: "polaroid" 
+			} ).googlenews({
+				start: 150,//100, // seconds
+				end: 166, // seconds
+				topic: 'Bruce Springsteen Wonder Bar',
+				target: 'google-news',
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).exec( 166, function() {
+				youtube8.pause();
+				youtubeVideo8.style.display = "none";
+				mainTimeline.play();
+            }).play().pause();
+			var youtube7 = Popcorn(Popcorn.youtube( "youtube-video-7",
+                "http://youtu.be/YsjBllkXHpk",  //#7  bruce r+r tribute
+                {  width: 345,
+                   height: 280
+				}
+                )
+            ).flickr({
+				start: 260,
+				end:   330,
+				//tags: 'brucespringsteen,',
+				tags:    "clarenceclemons",	
+				userid: "58248193@N00",
+				target: "content",
+				effect: "applyclass",
+				applyclass: "polaroid",
+				numberofimages: 2  //bruce and clarence giving it 1970s	
+			}).googlemap({
+				start: 265, // seconds  Student Prince
+				end: 330, // seconds
+				type: "STREETVIEW",
+				target: "map",
+				lat:  40.220076,
+				lng: -74.002093,
+				zoom: "1",
+				heading: "270",
+				pitch: "1",
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).twitter({
+				start: 280,// seconds
+				end: 330, //seconds
+				title: "Jake Clemons",
+				src: "@jakeclemons",
+				target: "twitter",
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			} ).googlenews({
+				start: 300, // seconds
+				end: 330, // seconds
+				topic: 'clarence clemons Memorial',
+				target: 'google-news',
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).exec( 330, function() {
+				youtube7.pause();
+				youtubeVideo7.style.display = "none";
+				mainTimeline.play();
+            }).play().pause();
+			var youtube9 = Popcorn(Popcorn.youtube( "youtube-video-9",
+                "http://youtu.be/HRFPWWoxpro",  //#8--test add clarence about magical moment
+                {  width: 345,
+                   height: 280
+				}
+                )
+            ).flickr({
+				start: 210,
+				end:   242,
+				tags:    "brucespringsteen",	
+				userid: "37323129@N00",
+				target: "content",
+				effect: "applyclass",
+				applyclass: "polaroid" ,
+				numberofimages: 1  //bruce and clarence with wild eyes - 1970s
+			}).flickr({
+				start: 215,
+				end:   242,
+				tags:    "clarenceclemons",	
+				userid: "32320223@N08",
+				target: "content",
+				effect: "applyclass",
+				applyclass: "polaroid",
+				numberofimages: 1  //awesome bruce and clarence - late 70s leaning on each other
+			}).twitter({
+				start: 220,// seconds
+				end: 242, //seconds
+				title: "clarenceclemons",
+				src: "#clarenceclemons",
+				target: "twitter",
+				effect: "applyclass",
+				applyclass: "polaroid" 
+			}).exec( 242, function() {
+				youtube9.pause();
+				youtubeVideo9.style.display = "none";
+				mainTimeline.play();
+            }).play().pause();*/
 			
+
 			/* MAIN TIMELINE - just a basic counter */
 			// DOM element associated with basic player and main timeline
 			player._resource = document.getElementById('timeline');
@@ -113,86 +432,283 @@
 			// main timeline in and out for first youtube video
 			// make the video visible and play at 0 seconds
 			mainTimeline.exec( 0, function() {
-				youtube3.currentTime(10);
-				youtube1.play();
-				youtubeVideo1.setAttribute("style","display:inline");
+				youtube1.currentTime(32); //#1 c l a r e n c e
+				youtube1.play(); 
+				youtubeVideo1.setAttribute("style","display:inline;padding-top:20px;");
 				mainTimeline.pause();
-			}).exec( 99, function() {
-				youtube3.currentTime(0);
-				youtube2.play();
-				youtubeVideo2.setAttribute("style","display:inline");
-				mainTimeline.pause();
-			}).exec( 89, function() {
-				youtube3.currentTime(87);
+			})/*.exec( 0.4, function() {
+				youtube3.currentTime(93);  //#2  wanted to rock
 				youtube3.play();
-				youtubeVideo3.setAttribute("style","display:inline");
+				youtubeVideo3.setAttribute("style","display:inline;padding-top:20px;");
 				mainTimeline.pause();
-			}).exec( 105, function() {
-				youtube4.currentTime(0);
+			}).exec( 0.8, function() {
+				youtube4.currentTime(0);  //#3  welcome bruce springsteen
 				youtube4.play();
-				youtubeVideo4.setAttribute("style","display:inline");
+				youtubeVideo4.setAttribute("style","display:inline;padding-top:20px;");
 				mainTimeline.pause();
-			}).exec( 125, function() {
-				youtube5.currentTime(119);
+			}).exec( 1.2, function() {
+				youtube5.currentTime(117);  //#4  karen - bruce bruce
 				youtube5.play();
-				youtubeVideo5.setAttribute("style","display:inline");
+				youtubeVideo5.setAttribute("style","display:inline;padding-top:20px;");
 				mainTimeline.pause();
-			}).exec( 142, function() {
-				youtube6.currentTime(23);
+			}).exec( 1.6, function() {
+				youtube6.currentTime(23);   //#5  growin up
 				youtube6.play();
-				youtubeVideo6.setAttribute("style","display:inline");
+				youtubeVideo6.setAttribute("style","display:inline;padding-top:20px;");
 				mainTimeline.pause();
+			}).exec( 2, function() {
+				youtube8.currentTime(138);   //#6--Clarence about bruce storm - 1st meeting
+				youtube8.play();
+				youtubeVideo8.setAttribute("style","display:inline;padding-top:20px;");
+				mainTimeline.pause();
+			}).exec( 2.4, function() {
+				youtube7.currentTime(251);  //#7  bruce r+r tribute
+				youtube7.play();
+				youtubeVideo7.setAttribute("style","display:inline;padding-top:20px;");
+				mainTimeline.pause();
+			}).exec( 2.8, function() {
+				youtube9.currentTime(202);    //#8--test add clarence about magical moment
+				youtube9.play();
+				youtubeVideo9.setAttribute("style","display:inline;padding-top:20px;");
+				mainTimeline.pause();	
 			}).flickr({
-				start: 0,
-				end:   115,
-				tag:    "brucespringsteen",	
-				userid: "26981605@N08",
-				target: "mainbody",
-				numberofimages: 5
+				start: .5,
+				end:   1.4,
+				//tags: 'brucespringsteen, clarenceclemons',
+				tags:    "clarenceclemons",	
+				userid: "64969964@N05",
+				target: "flickr",
+				numberofimages: 2 
 			}).flickr({
-				start: 10,
-				end:   80,
-				tag:    "milwaukee",	
+				start: 3,
+				end:   5,
+				//tags: 'brucespringsteen,',
+				tags:    "clarenceclemons",	
 				userid: "26981605@N08",
-				target: "mainbody",
-				numberofimages: 2
+				target: "content",
+				numberofimages: 1 
+			}).flickr({
+				start: 1,
+				end:   1.4,
+				tags:    "clemons",	
+				userid: "98653209@N00",
+				target: "content",
+				numberofimages: 1		// clarence sweat into sax
+			}).flickr({
+				start: 1,
+				end:   1.4,
+				tags:    "clarence",	
+				userid: "58248193@N00",  //clarence solo with shadow
+				target: "content",
+				numberofimages: 1   //JUST BLOCKED on SEPT 4 
+			}).flickr({
+				start: 0.8,
+				end:   1.3,
+				tags:    "brucespringsteen",	
+				userid: "35903212@N00",  //bruce 1970s too cool for Max Club intro and Karen comment
+				target: "content",
+				numberofimages: 2		
+			}).flickr({
+				start: 2.5,
+				end:   3.2,
+				tags:    "brucespringsteen",	
+				userid: "40283214@N04",
+				target: "content",
+				numberofimages: 1	//bruce solo 1975 with guitar	
+			}).flickr({
+				start: 2.5,
+				end:   3.2,
+				tags:    "boss",	
+				userid: "10403914@N05",
+				target: "content",
+				numberofimages: 1	//bruce solo with toque 1970s   SEPT 5 BLOCK 
+			}).flickr({
+				start: 3.4,
+				end:   3.9,
+				//tags: 'brucespringsteen,',
+				tags:    "clarenceclemons",	
+				userid: "58248193@N00",
+				target: "content",
+				numberofimages: 2  //bruce and clarence giving it 1970s	 SEPT 5 BLOCK 
+			}).flickr({
+				start: 3.9,
+				end:   4.4,
+				tags:    "brucespringsteen",	
+				userid: "37323129@N00",
+				target: "content",
+				numberofimages: 1  //bruce and clarence with wild eyes - 1970s
+			}).flickr({
+				start: 3.9,
+				end:   4.4,
+				tags:    "clarenceclemons",	
+				userid: "32320223@N08",
+				target: "content",
+				numberofimages: 1  //awesome bruce and clarence - late 70s leaning on each other   SEPT 5 BLOCK 
+			}).flickr({
+				start: 4.5,
+				end:   14.1,
+				tags:    "clarenceclemons",	 //clarence & bruce
+				userid: "10359044@N04",
+				target: "content",
+				numberofimages: 3 // SEPT 5 BLOCK 
+			}).flickr({
+				start: 5,
+				end:   8,
+				//tags: 'clarenceclemons',
+				tags:    "springsteen",	
+				userid: "7675314@N08",
+				target: "content",
+				numberofimages: 3
+			}).flickr({
+				start: 20,
+				end:   20,
+				//tag:    "milwaukee",
+				tags:    "brucespringsteen",
+				userid: "10359044@N04", 
+				target: "content",
+				//numberofimages: 2
+				numberofimages: 4
 			}).flickr({
 				start: 30,
 				end:   60,
-				tag:    "lennox",	
+				tags:    "lennox",	
 				userid: "26981605@N08",
-				target: "mainbody",
+				target: "content",
 				numberofimages: 1
 			}).flickr({
 				start: 80,
 				end:   160,
-				tag:    "springsteen",	
+				tags:    "springsteen",	
 				userid: "7675314@N08",
-				target: "mainbody",
-				numberofimages: 8
+				target: "content",
+				numberofimages: 8 
+			}).twitter({
+				start: 0,// seconds
+				end: 1.8, //seconds
+				title: "Springsteen",
+				src: "#springsteen",
+				target: "twitter" // SEPT 5 EDIT
+			}).twitter({
+				start: 1.6,// seconds
+				end: 2.4, //seconds
+				title: "Bruce Springsteen",
+				src: "@springsteen",
+				target: "twitter" 
+			}).twitter({
+				start: 3.5,// seconds
+				end: 4.1, //seconds
+				title: "Jake Clemons",
+				src: "@jakeclemons",
+				target: "twitter" //SEPT 5 EDIT
+			}).twitter({
+				start: 4.4,// seconds
+				end: 7, //seconds
+				title: "Springsteen",
+				src: "#springsteen",
+				target: "twitter"  //SEPT 5 EDIT
 			}).googlemap({
-				start: 0, // seconds
-				end: 20, // seconds
+				start: 0, // seconds  New Jersey
+				end: 1, // seconds
+				type: "HYBRID",
+				target: "map",
+				lat:  40.149488,
+				lng: -74.40033,
+				zoom: "7",
+				//heading: "0",
+				//pitch: "1"    //GOOGLE MAP SEPT 4
+			}).googlemap({
+				start: 1.2, // seconds  Asbury Park
+				end: 1.6, // seconds
+				type: "HYBRID",
+				target: "map",
+				lat:  40.220994,
+				lng: -74.01211,
+				zoom: "15",
+				//heading: "0",
+				//pitch: "1"  //BLOCKED SEPT 5
+			}).googlemap({
+				start: 8, // seconds  Max Club NY
+				end: 9, // seconds
+				type: "ROADMAP",
+				target: "map",
+				lat:  40.754747,
+				lng: -73.975674,
+				zoom: "18",
+				//heading: "0",
+				//pitch: "1"  
+			}).googlemap({
+				start: 3, // seconds  Wonderbar  3
+				end: 3.4, // seconds  3.4
 				type: "STREETVIEW",
 				target: "map",
-				lat: 43.665429,
-				lng: -79.403323,
+				lat:  40.223533,
+				lng: -73.99938,
+				zoom: "2.2",
+				heading: "230",
+				pitch: "1"    //SEPT 5 BLOCK
+			}).googlemap({
+				start: 2.5, // seconds  Stone Poney
+				end: 2.9, // seconds
+				type: "STREETVIEW",
+				target: "map",
+				lat:  40.220011,
+				lng: -74.000527,
 				zoom: "1",
-				heading: "0",
-				pitch: "1"
-		  } ).facebook({
+				heading: "270",
+				pitch: "1"  //SEPT 5 BLOCK 
+			}).googlemap({
+				start: 3.5, // seconds  Student Prince
+				end: 4.1, // seconds
+				type: "STREETVIEW",
+				target: "map",
+				lat:  40.220076,
+				lng: -74.002093,
+				zoom: "1",
+				heading: "270",
+				pitch: "1" //SEPT 5 BLOCK 
+			}).googlemap({
+				start: 4.2, // seconds 10th Avenue + Estreet
+				end: 7, // seconds
+				type: "HYBRID",
+				target: "map",
+				lat:  40.179013,
+				lng: -74.02364,
+				zoom: "18",
+				//heading: "0",
+				//pitch: "1" //SEPT 5 BLOCK
+		    } ).googlenews({
+				start: 0,//100, // seconds
+				end: 1.2, // seconds
+				topic: 'Bruce Springsteen Eulogy Clarence Clemons',
+				target: 'google-news'  //Sept 4 Block 
+			} ).googlenews({
+				start: 1.5,//100, seconds
+				end: 2.4, // seconds
+				topic: 'Clarence Clemons',
+				target: 'google-news'
+			} ).googlenews({
+				start: 3,//100, // seconds
+				end: 3.2, // seconds
+				topic: 'Bruce Springsteen Wonder Bar',
+				target: 'google-news' //SEPT 5 BLOCK 
+			} ).googlenews({
+				start: 3.2,//100, // seconds
+				end: 4.2, // seconds
+				topic: 'clarence clemons Memorial',
+				target: 'google-news' //SEPT 5 BLOCK 
+			} ).googlenews({
+				start: 4.2,//100, // seconds
+				end: 7, // seconds
+				topic: 'clarence clemons Bruce Springsteen',
+				target: 'google-news'	//SEPT 5 BLOCK 
+			} ).facebook({
 				href  : "http://www.facebook.com/pages/Clarence-Clemons/91141977179",
-				type  : "FACEPILE",
+				type  : "LIKE-BOX",
 				target: "facebook",
 				width : 300,
-				start : 0,//80,
-				end   : 200
-		  } ).googlenews({
-				start: 0,//100, // seconds
-				end: 300, // seconds
-				topic: 'Bruce Springsteen Wonder Bar',
-				target: 'google-news'
-		  } ).listen( 'timeupdate', function() {
+				start : 0,
+				end   : 15  
+			})*/.listen( 'timeupdate', function() {
 				timing.innerHTML = mainTimeline.currentTime();
 			});
 			// start the main timeline automatically
@@ -214,21 +730,66 @@
 		}, false);//$("[data-autocomplete]").autocomplete({ source: friendArray });
     </script>
   </head>
-  <body id="mainbody">
-    <!-- div timeline needed for main timeline -->
-    <div id="timeline" style="display:none" ></div>
-    <!-- button simple needed for play and pause of main timeline -->
-    <button class="simple" id="btnTogglePause">Pause</button><span id="player-time"></span><br />
-    <!-- div youtube1 needed for the first youtube video -->
-    <div id="youtube-video-1" style="display:none;" class="polaroid"></div>
-    <div id="youtube-video-2" style="display:none;" class="polaroid"></div>
-    <div id="youtube-video-3" style="display:none;" class="polaroid"></div>
-    <div id="youtube-video-4" style="display:none;" class="polaroid"></div>
-    <div id="youtube-video-5" style="display:none;" class="polaroid"></div>
-    <div id="youtube-video-6" style="display:none;" class="polaroid"></div>
-    <div id="map" ></div>
-    <div id="facebook" class="polaroid"></div>
-    <div id="google-news" class="polaroid"></div>
-  </body>
 
+<body id="mainbody">
+	<div id="page1" style="display:none">
+		<header>
+			<nav> 
+				<ul id="links"> 
+					<li id="links-home"><a href="#">Scooter + The Big Man |</a></li> 
+					<!--<li><a href="http://www.deiren.com/annasob_popcorn_js/demos/polaroid/about.html">About |</a></li>--> 
+					<li><a href="../about/about.html">About |</a></li>
+					<li><a href="../contact/contact.html">Contact</a></li> 
+				</ul> 
+			</nav> 
+	
+			<h1 id="beta">BETA</h1>
+
+			
+			<!-- div timeline needed for main timeline -->
+			<div id="timeline" style="display:none" ></div>
+			<!-- button simple needed for play and pause of main timeline -->
+			<button class="simple" id="btnTogglePause">Pause</button><span id="player-time"></span><br />
+			
+			
+		</header>	
+		<div id="content">
+			
+			<!-- div youtube1 needed for the first youtube video -->
+			<div id="youtube-video-1" ></div>
+			<div id="youtube-video-2" style="display:none;" class="polaroid"></div>
+
+			<div id="youtube-video-3" style="display:none;" class="polaroid"></div>
+			<div id="youtube-video-4" style="display:none;" class="polaroid"></div>
+			<div id="youtube-video-5" style="display:none;" class="polaroid"></div>
+			<div id="youtube-video-6" style="display:none;" class="polaroid"></div>
+			<div id="youtube-video-7" style="display:none;" class="polaroid"></div>
+			<div id="youtube-video-8" style="display:none;" class="polaroid"></div>
+			<div id="youtube-video-9" style="display:none;" class="polaroid"></div>
+			
+			<div id="twitter" class="polaroid" style="display:none;"></div> 
+			<!--<div id="twitter2" class="polaroid"></div>-->
+
+			<div id="map" class="polaroid" style="display:none;"></div>
+			<div id="google-news" class="polaroid" style="display:none;"></div>
+			<!--<div id="facebook" class="polaroid"></div>-->
+			
+			<!--<div id="flickr"></div>-->
+		
+		</div> <!-- content ends -->
+	</div>
+	<div id="play"> <!--SPLASH PAGE -->
+	
+		<button id="playbutton">PLAY</button>
+
+		
+		<!--<h1>Scooter and The Big Man</h1> 
+		
+		<p> 
+			<a href="http://www.getfirefox.com/" target="_blank"><img src="images/icons/firefox.png"></a> 
+			<a href="http://www.google.com/chrome" target="_blank"><img src="images/icons/chrome.png"></a> 
+			<a href="http://www.apple.com/safari/download/" target="_blank"><img src="images/icons/safari.png"></a> 
+		</p>--> 
+	</div> <!--ends Splash Page-->
+</body>	
 </html>

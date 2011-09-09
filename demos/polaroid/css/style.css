@@ -1,20 +1,608 @@
 /*
-                                __      _ _                   _   
-                               / _|    | (_)                 | |  
- _ __ ___   __ _ _ __ ___ ___ | |_ ___ | |_  ___   _ __   ___| |_ 
-| '_ ` _ \ / _` | '__/ __/ _ \|  _/ _ \| | |/ _ \ | '_ \ / _ \ __|
-| | | | | | (_| | | | (_| (_) | || (_) | | | (_) || | | |  __/ |_ 
-|_| |_| |_|\__,_|_|  \___\___/|_| \___/|_|_|\___(_)_| |_|\___|\__|
-                                                                  
+Relative Strangers Interactive  http://www.relativestrangers.ca/
+Deiren Masterson
+
+
+ORANGE: #e88a1b
+BLACK: #000
+WHITE: #fff
+GREY: grey
+
+
 */
-body, div, img, p { padding:0; margin:0; }
+
+/* GLOBALS */
+
+body, div, img, p { 
+	padding:0; 
+	margin:0; 
+	font-family: Helvetica, Arial, sans-serif; 
+}
+
 /* body { overflow:hidden; background-image:url(../images/bg.jpg); } */
-body { overflow:hidden; background-image:url(../images/clemons_bruce_10thave_4.jpg); }
-.polaroid { width:368px; height:376px; background-image:url(../images/polaroid-bg.png); position:absolute; }
-.polaroid img { width:335px; height:275px; margin:25px 0 0 15px; }
-.polaroid p { text-align:center; font-family:Georgia,serif; font-size:20px; color:#2E2E2E; margin-top:15px; }
+/*body { overflow:hidden; background-image:url(../images/clemons_bruce_10thave_4.jpg); }*/
+body { 
+	overflow:hidden; 
+	background:white; 
+}   /* add padding { 100px 0 0 0; } to try and create nav and header */
+
+#mainbody-about {
+	background: grey !important; 
+}
+
+/*#mainbody { 
+	padding: 100px 0 0 0 !important;
+}*/
+
+/* INTRO PAGE */
+
+#play { 
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	left: 0; 
+	padding-top: 150px; /* was 50px -- was 250px */
+	text-align: center; 
+	xbackground-color: #ffffff; 
+	background-color: #cccccc;
+	xcursor: pointer; 
+	xdisplay: none; 
+	xcolor: #cccccc; 
+	z-index: 400;
+	xbackground-image:url(http://www.hamienet.com/Jungleland-sheet-music-page_3613-2-1.png);
+	background-image:url(../images/scooter+bigman_splashpage_1024x768_no-notes_smll.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+
+#play h1 { 
+	margin: 100px 0; 
+	font-size: 30px; 
+}
+
+#play h2 { 
+	margin: 100px 0; 
+	font-size: 30px; 
+}
+
+#play p.browser_notes { 
+	margin: 100px auto 0 auto; 
+	font-size: 12px; 
+	width: 480px; 
+	text-align: center;
+}
+
+
+#playbutton {
+    xposition: relative; 
+    color:  orange;
+    font-size: 2em; /* was 19px */
+    border-radius: 80px;
+	-moz-border-radius:80px;
+	-webkit-border-radius:80px;
+    width: 150px;
+    height: 150px;
+	display: block;
+	text-align: center;
+    background: #000;
+    border-color: white;
+	margin-left: 530px;  /* was 580px */
+    xmargin: 35px 0 0 40px;
+    border-style: solid;
+    border-width: thick;
+	cursor: pointer; 
+}
+
+#playbutton:hover { 
+background-color: #e88a1b; 
+color: #fff; 
+font-size: 2.2em;
+border: none;
+}
+
+#playbutton:active	
+{ top: 1px; 
+}
+
+#playbutton:visited {
+background-color: #e88a1b;
+}
+
+    
+/* NAVIGATION */
+nav { 
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	right: 0; 
+	height: 172px; 
+	background-color: grey; 
+	background-image:url(../images/clemons_header_transparency.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	xbackground-image:url(../images/clemons_bruce_10thave_4.jpg);
+	text-align: right; 
+	margin: 0 0 5px 0; 
+	xposition:absolute;
+	xz-index:100;
+	
+}
+
+nav ul { 
+	margin: 5px 20px 5px 0; 
+	list-style-type: none;
+}
+
+
+nav li { 
+	display: inline-block;
+	padding: 5px;
+}
+
+nav ul li a {
+	text-decoration: none !important;
+	border: 2px;
+    color: orange;
+	padding: 5px 3px 4px;
+}  /* unvisited link */ 
+
+nav ul li a:hover, a:active {
+	background: #000000;
+    border-radius: 3px 3px 3px 3px;
+	text-decoration: none !important;
+}   /* mouse over link */
+
+/* bg color for active pages */
+nav ul#links li#links-home a {
+	background-color: #000000;
+    border-radius: 3px 3px 3px 3px;
+}
+
+nav ul#links li#links-about a {
+	background-color: #000000;
+    border-radius: 3px 3px 3px 3px;
+}
+
+nav ul#links li#links-contact a {
+	background-color: #000000;
+    border-radius: 3px 3px 3px 3px;
+}
+
+
+/* BETA */
+
+
+#beta {
+    color: #FFFFFF;
+    float: right;
+    xmargin-left: 1560px;
+    margin-right: 20px;
+    margin-top: 90px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* PAUSE BUTTON */
+
+/*#btnTogglePause {
+position:relative;
+z-index: 100px;
+} */
+
+#btnTogglePause {
+    position: relative; 
+    color:  orange;
+    font-size: 19px;
+    border-radius: 50px;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+    width: 100px;
+    height: 100px;
+	display: block;
+	text-align: center;
+    background: #000;
+    border-color: white;
+    margin: 35px 0 0 40px;
+    border-style: solid;
+    border-width: thick;
+	xposition: absolute;  /*changed from relative in making nav and content absolute for their z-indexes */
+	xz-index: 300;
+}
+
+#player-time {
+	position: relative;  /*changed from relative in making nav and content absolute for their z-indexes */
+	xz-index: 300;
+	font-size: 18px;
+    margin: 90px 0 0;
+    padding-left: 10px;
+	float: left;
+    margin-top: 3px;
+}
+
+/* CONTENT WRAP */
+#content { 
+	position: relative; 
+	margin: 50px 10px 10px 10px;  
+	text-align: center;
+	/*overflow:hidden;*/
+	xbackground-image:url(../images/contentbg.jpg);
+	xposition:absolute;
+	xz-index:-100;
+}
+
+#flickr {
+	position:relative;
+	float:left;
+	width: 650px;
+}
+
+#content-about {
+	background: none repeat scroll 0 0 #000 !important;
+    xfloat: left;
+    margin: 30px auto 0;
+    overflow: hidden;
+    padding: 30px 0 0;
+    width: 980px;
+}
+
+/* ABOUT PAGE */
+
+#content-about h2 {
+	color: #e88a1b;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 32px;
+    padding: 0 167px;
+    text-align: center;
+    width: 646px;
+}
+
+#content-about p.detail {
+	color: #ffffff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    padding: 0 167px 20px 167px;
+}
+
+p.detail a {
+	color: #e88a1b;
+}
+
+
+/* #content-wrap { position:relative; width: 100 overflow: visible; margin: 0 auto; } */
+/*#timeline { width: 100%; height: 50px; } */
+
+/* POLAROID */
+.polaroid { 
+	width:368px; 
+	height:376px; 
+	background-image:url(../images/polaroid-bg.png); 
+	position:absolute; 
+	background-repeat:no-repeat;
+}
+
+
+.polaroid img {
+    height: 275px;
+    margin: 22px 0 0 4px;
+    width: 335px;
+}
+
+
+.polaroid p { 
+	text-align:center; 
+	font-family:Georgia,serif; 
+	font-size:20px; 
+	color:#2E2E2E; 
+	margin-top:15px; 
+}
+
+.polaroid p {
+    color: #ffffff;
+    font-family: Georgia,serif;
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+
+
 /* .polaroid #videoplayer { width:335px; height:275px; margin:25px 0 0 15px; z-index: 1;} */
 /* #movie {margin-top:300px; } */
 /* .polaroid p #movie { margin: 50px 0px 0px 50px; } */
-.polaroid #googlemap { margin: 10px 0px 0px 10px; }
-.polaroid #video { margin: 16px 0px 0px 22px; }
+/* .polaroid #googlemap { margin: 10px 0px 0px 10px; }  */
+/*.polaroid #video { margin: 16px 0px 0px 22px; } */
+
+/* #map.polaroid ui-draggable  { width:250px; height:250px; z-index: 1; } */
+
+/* #acutalmap1  { padding: 10px 0 0 0; width: 90%; height: 68%; display: block; position: relative; margin:30px 30px 30px 20px; background-color: rgb(229, 227, 223); overflow: hidden; } */
+
+
+/* #map.polaroid ui-draggable#acutalmap1 { padding: 10px 0 0 0; width: 90%; height: 68%; display: block; position: relative; margin:30px 30px 30px 20px; background-color: rgb(229, 227, 223); overflow: hidden; } */
+ 
+/* #facebook.polaroid ui-draggable  { color:#fffff; width:250px; height:250px; z-index: 100; position:absolute; } */
+
+.fb_iframe_widget { display:inline; position:absolute; z-index:100px; width:320px; height:320px; }
+
+/* #google-news { padding: 10px 0 0 10px; } */
+
+
+
+
+/* TWITTER POLAROID */
+
+
+/* #twitter.polaroid ui-draggable  { color:#fffff; width:250px; height:250px; } */
+
+/*.twtr-ft a img {
+    height: 10px;
+    position: relative;
+    top: 2px;
+    width: 60px;
+}*/
+
+
+
+/* twitter text color and positong */
+.twtr-widget h3, .twtr-widget h4, .twtr-widget p {
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    color: #ffffff;
+    text-align: left;
+    margin: 0 0 0 10px;
+	font-weight: bold !important;
+	font-size: 16px;
+}
+
+
+.twtr-widget h3 {
+    color: black !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+
+/* @Jakeclmemons */
+.twtr-hd {
+    overflow: hidden;
+    padding-top: 12px !important;
+    position: relative;
+}
+
+/* twitter icon */
+.twtr-ft a img {
+    position: relative;
+    top: 2px;
+    width: 70px;
+    height: 10px;
+}
+
+/* avatar */
+.twtr-avatar {
+    display: block;
+    float: left;
+    height: 60px;
+    overflow: hidden;
+    width: 30px;
+    padding: 0 20px 0 0;
+}
+
+/* widdens text area */
+.twtr-doc {
+    border-radius: 5px 5px 5px 5px;
+    font-weight: normal;
+    overflow: hidden;
+    text-align: left;
+    width: 300px;
+	margin-left: 40px;
+}
+
+/*changes link color to orange */
+.twtr-doc a {
+    text-decoration: none !important;
+    color: orange;
+}
+
+/* adjusts hashtag name on polaroid title */
+.twtr-widget h4 {
+    font-size: 18px !important;
+    color: black;
+    position: relative;
+}
+
+/* adjusts the z-index for twitter text */
+.twtr-timeline {
+    border-radius: 6px 6px 6px 6px;
+    height: 225px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0 !important;
+}
+
+
+/* GOOGLE NEWS from newsshow+en.css */  
+
+.gns-root {
+    font-family: arial,sans-serif;
+    font-size: 16px;
+    position: relative;
+    margin: 20px 0 0 20px;
+    width: 20px;
+}
+
+/* .gns-300x250 .gns-basecanvas {
+    background-color: #FFFFFF;
+    background-image: url("/uds/modules/elements/newsshow/generic-noborder-298x248.gif");
+    background-repeat: no-repeat;
+    height: 280px;
+    left: -3px;
+    top: 0px;
+    width: 332px;
+} */
+
+.gns-300x250 .gns-basecanvas {
+    background-color: #FFFFFF;
+    background-image: url("/uds/modules/elements/newsshow/generic-noborder-298x248.gif");
+    background-repeat: no-repeat;
+    height: 275px !important;
+    left: -2px !important;
+    top: 3px !important;
+    width: 335px !important;
+}
+
+
+.gns-title a:link, .gns-title a:visited {
+    color: #F79320;
+    text-decoration: underline;
+}
+
+
+/*
+.gns-title a:link, .gns-title a:visited {
+    color: #000099;
+    text-decoration: underline;
+}  */
+
+
+
+/* GOOGLE MAP */
+
+#actualmap1 { 
+	background-color: #E5E3DF;
+    display: block;
+    height: 72% !important;
+    margin:28px 0 0 18px;
+    overflow: hidden;
+    position: relative;
+    width: 91% !important;
+} 
+
+#actualmap2 { 
+	background-color: #E5E3DF;
+    display: block;
+    height: 72% !important;
+    margin:28px 0 0 18px;
+    overflow: hidden;
+    position: relative;
+    width: 91% !important;
+} 
+
+#actualmap3 { 
+	background-color: #E5E3DF;
+    display: block;
+    height: 72% !important;
+    margin:28px 0 0 18px;
+    overflow: hidden;
+    position: relative;
+    width: 91% !important;
+} 
+
+#actualmap4 { 
+	background-color: #E5E3DF;
+    display: block;
+    height: 72% !important;
+    margin:28px 0 0 18px;
+    overflow: hidden;
+    position: relative;
+    width: 91% !important;
+} 
+
+#actualmap5 { 
+	background-color: #E5E3DF;
+    display: block;
+    height: 72% !important;
+    margin:28px 0 0 18px;
+    overflow: hidden;
+    position: relative;
+    width: 91% !important;
+} 
+
+#actualmap6 { 
+	background-color: #E5E3DF;
+    display: block;
+    height: 72% !important;
+    margin:28px 0 0 18px;
+    overflow: hidden;
+    position: relative;
+    width: 91% !important;
+} 
+
+#actualmap7 { 
+	background-color: #E5E3DF;
+    display: block;
+    height: 72% !important;
+    margin:28px 0 0 18px;
+    overflow: hidden;
+    position: relative;
+    width: 91% !important;
+} 
+
+
+
+/* FACEBOOK */
+
+.fb_iframe_widget iframe {
+    position: relative;
+    vertical-align: text-bottom;
+    margin: 120px 0 0 40px !important;
+}
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+/*.footer {
+	height: 100	px; 
+	background-color: grey;
+	}*/
+
+
+
+/*.fb_iframe_widget {
+    display: inline-block;
+    position: absolute !important;
+    margin: 125px 0 0 -130px !important;
+}*/
+
+
+/*.fb_iframe_widget[style] {
+    display: inline-block;
+    position: absolute;
+    margin: 125px 0 0 -130px;
+}*/
+
+
+
+/* #map.polaroid ui-draggable#actualmap1 {
+	background-color: #E5E3DF;
+    display: block;
+	width: 91%; 
+	height: 72%; 
+	margin:28px 0 0 19px;
+	overflow: hidden;
+	position: relative;
+	width: 91%;
+}*/
+
+
+/*YouTube */
+
+/*
+#youtube-video-11313548482548 {
+	margin:20px;
+}
+
+
+#youtube-video-21313545136536 {
+	margin:20px
+}*/

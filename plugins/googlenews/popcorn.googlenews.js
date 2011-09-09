@@ -65,11 +65,12 @@
           Popcorn.getScript( "http://www.google.com/jsapi", callBack );
         }
 
-        options.container = document.createElement( 'div' );
+        //options.container = document.createElement( 'div' );
         var container = document.createElement( 'div' );
         if ( document.getElementById( options.target ) ) {
-          document.getElementById( options.target ).appendChild( options.container );
-          options.container.appendChild( container );
+         // document.getElementById( options.target ).appendChild( options.container );
+          //options.container.appendChild( container );
+          var container = options.container =  document.getElementById( options.target);
         }
 
         var readyCheck = setInterval(function() {
@@ -87,7 +88,7 @@
 
         }, 5);
 
-        options.container.style.display = "none";
+       // options.container.style.display = "none";
 
       },
       /**

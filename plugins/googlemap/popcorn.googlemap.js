@@ -76,7 +76,7 @@ var googleCallback;
    *
    */
   Popcorn.plugin("googlemap", function (options) {
-    var newdiv, map, location;
+    var newdiv, map, location,  target;
 
     // if this is the firest time running the plugins
     // call the function that gets the sctipt
@@ -94,7 +94,8 @@ var googleCallback;
 
     // ensure the target container the user chose exists
     if (document.getElementById(options.target)) {
-      document.getElementById(options.target).appendChild(newdiv);
+      target = document.getElementById(options.target);
+      target.appendChild(newdiv);
     } else {
       throw ("map target container doesn't exist");
     }
@@ -115,7 +116,8 @@ var googleCallback;
               map = new google.maps.Map(newdiv, {
                 mapTypeId: google.maps.MapTypeId[options.type] || google.maps.MapTypeId.HYBRID
               });
-              map.getDiv().style.display = "none";
+              //map.getDiv().style.display = "none";
+              target.style.display = "none";
             }
           });
         } else {
@@ -123,7 +125,8 @@ var googleCallback;
           map = new google.maps.Map(newdiv, {
             mapTypeId: google.maps.MapTypeId[options.type] || google.maps.MapTypeId.HYBRID
           });
-          map.getDiv().style.display = "none";
+          //map.getDiv().style.display = "none";
+          target.style.display = "none";
         }
       } else {
           setTimeout(function () {
@@ -148,7 +151,8 @@ var googleCallback;
         // ensure the map has been initialized in the setup function above
         var isMapSetup = function() {
           if ( map ) {
-            map.getDiv().style.display = "block";
+            //map.getDiv().style.display = "block";
+            target.style.display = "block";
             // reset the location and zoom just in case the user plaid with the map
             google.maps.event.trigger(map, 'resize');
             map.setCenter( location );
@@ -316,9 +320,10 @@ var googleCallback;
       end: function (event, options) {
         // if the map exists hide it do not delete the map just in
         // case the user seeks back to time b/w start and end
-        if (map) {
-          map.getDiv().style.display = "none";
-        }
+        //if (map) {
+          //map.getDiv().style.display = "none";
+        //}
+        target.style.display = "none";
       },
       _teardown: function (options) {
         // the map must be manually removed

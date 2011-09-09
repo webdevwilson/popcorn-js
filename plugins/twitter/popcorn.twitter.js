@@ -60,7 +60,7 @@
         // setup widget div that is unique per track
         options.container = document.createElement( 'div' ); // create the div to store the widget
         options.container.setAttribute('id', Popcorn.guid()); // use this id to connect it to the widget
-        options.container.style.display = "none"; // display none by default
+        //options.container.style.display = "none"; // display none by default
 
          // add the widget's div to the target div
         document.getElementById( options.target ) && document.getElementById( options.target ).appendChild( options.container );
@@ -136,7 +136,8 @@
        * options variable
        */
       start: function( event, options ) {
-        options.container.style.display = "inline";
+        //options.container.style.display = "inline";
+        document.getElementById( options.target ).style.display = "inline";
       },
 
       /**
@@ -146,7 +147,8 @@
        * options variable
        */
       end: function( event, options ) {
-        options.container.style.display = "none";
+        //options.container.style.display = "none";
+        document.getElementById( options.target ).style.display = "none";
       },
       _teardown: function( options ) {
 

@@ -111,7 +111,7 @@
             _image.setAttribute( 'style', 'border:' + _border + ';padding:' + _padding );
             // go threw the targetarray and append the newly loaded image
             document.getElementById(targetarray[i]).appendChild( _image );
-
+			console.log (item.media.m);
           } else {
             return false;
           }
@@ -146,7 +146,7 @@
        */
       end: function( event, options ) {      
         for( var i = 0; i< targetarray.length; i++) {
-      		document.getElementById(targetarray[i]).style.display = "inline";
+      		document.getElementById(targetarray[i]).style.display = "none";
       	}  
       },
       _teardown: function( options ) {
