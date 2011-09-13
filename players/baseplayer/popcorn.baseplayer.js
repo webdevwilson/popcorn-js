@@ -54,7 +54,6 @@
         this.currentTime += ( new Date() - this.baselineTime ) / 1000;
         this.dispatchEvent( "timeupdate" );
       }
-
       this.baselineTime = new Date();
       
       setTimeout(function() {

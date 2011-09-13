@@ -513,9 +513,9 @@ var onYouTubePlayerReady;
           self = this;
 
       // do nothing if size is not yet determined
-      if ( bytesToLoad === 0 ) {
-        return;
-      }
+      //if ( bytesToLoad === 0 ) {
+      //  return;
+      //}
 
       // raise an event if load has just started
       if ( !this.loadStarted ) {
@@ -524,7 +524,7 @@ var onYouTubePlayerReady;
       }
 
       // fully loaded
-      if ( bytesLoaded >= bytesToLoad ) {
+      if ( bytesLoaded >= bytesToLoad &&  bytesToLoad != 0) {
         this.fullyLoaded = true;
         this.readyState = READY_STATE_HAVE_ENOUGH_DATA;
         this.dispatchEvent( 'canplaythrough' );
