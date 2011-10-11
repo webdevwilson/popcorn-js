@@ -1,6 +1,6 @@
 // PLUGIN: Wordriver
 
-(function (Popcorn) {
+(function ( Popcorn ) {
 
   var container = {},
       spanLocation = 0,
@@ -10,10 +10,10 @@
 
         var t = document.getElementById( target );
         t && t.appendChild( container[ target ] );
-        
+
         container[ target ].style.height = "100%";
         container[ target ].style.position = "relative";
-        
+
         return container[ target ];
       },
       // creates an object of supported, cross platform css transitions
@@ -43,13 +43,13 @@
   document.getElementsByTagName( "head" )[ 0 ].appendChild( span );
 
   /**
-   * Word River popcorn plug-in 
-   * Displays a string of text, fading it in and out 
+   * Word River popcorn plug-in
+   * Displays a string of text, fading it in and out
    * while transitioning across the height of the parent container
    * for the duration of the instance  (duration = end - start)
-   *  
+   *
    * @param {Object} options
-   * 
+   *
    * Example:
      var p = Popcorn( '#video' )
         .wordriver({
@@ -63,21 +63,41 @@
    */
 
   Popcorn.plugin( "wordriver" , {
-    
+
       manifest: {
         about:{
           name: "Popcorn WordRiver Plugin"
         },
-        options:{
-          start    : {elem:'input', type:'text', label:'In'},
-          end      : {elem:'input', type:'text', label:'Out'},
-          target  :  'wordriver-container',
-          text     : {elem:'input', type:'text', label:'Text'},
-          color    : {elem:'input', type:'text', label:'Color'}
+        options: {
+          start: {
+            elem: "input",
+            type: "text",
+            label: "In"
+          },
+          end: {
+            elem: "input",
+            type: "text",
+            label: "Out"
+          },
+          target: "wordriver-container",
+          text: {
+            elem: "input",
+            type: "text",
+            label: "Text"
+          },
+          color: {
+            elem: "input",
+            type: "text",
+            label: "Color"
+          }
         }
       },
 
       _setup: function( options ) {
+
+        if ( !document.getElementById( options.target ) && Popcorn.plugin.debug ) {
+          throw new Error( "target container doesn't exist" );
+        }
 
         options._duration = options.end - options.start;
         options._container = container[ options.target ] || setupContainer( options.target );
@@ -110,9 +130,8 @@
         spanLocation = spanLocation % ( options._container.offsetWidth - options.word.offsetWidth );
         options.word.style.left = spanLocation + "px";
         spanLocation += options.word.offsetWidth + 10;
-
         options.word.style[ supports.transform ] = "translateY(" +
-          ( document.getElementById( options.target ).offsetHeight - options.word.offsetHeight ) + "px)";
+          ( options._container.offsetHeight - options.word.offsetHeight ) + "px)";
 
         options.word.style.opacity = 1;
 
@@ -130,13 +149,14 @@
       },
       _teardown: function( options ) {
 
+        var target = document.getElementById( options.target );
         // removes word span from generated container
         options.word.parentNode && options._container.removeChild( options.word );
 
         // if no more word spans exist in container, remove container
         container[ options.target ] &&
           !container[ options.target ].childElementCount &&
-          document.getElementById( options.target ).removeChild( container[ options.target ] ) &&
+          target && target.removeChild( container[ options.target ] ) &&
           delete container[ options.target ];
       }
   });

@@ -22,7 +22,7 @@ body, div, img, p {
 /* body { overflow:hidden; background-image:url(../images/bg.jpg); } */
 /*body { overflow:hidden; background-image:url(../images/clemons_bruce_10thave_4.jpg); }*/
 body { 
-	overflow:hidden; 
+	overflow:auto; 
 	background:white; 
 }   /* add padding { 100px 0 0 0; } to try and create nav and header */
 
@@ -36,7 +36,7 @@ body {
 
 /* INTRO PAGE */
 
-#play { 
+#splashPage { 
 	position: fixed; 
 	top: 0; 
 	right: 0; 
@@ -57,17 +57,17 @@ body {
 }
 
 
-#play h1 { 
+#splashPage h1 { 
 	margin: 100px 0; 
 	font-size: 30px; 
 }
 
-#play h2 { 
+#splashPage h2 { 
 	margin: 100px 0; 
 	font-size: 30px; 
 }
 
-#play p.browser_notes { 
+#splashPage p.browser_notes { 
 	margin: 100px auto 0 auto; 
 	font-size: 12px; 
 	width: 480px; 

@@ -52,8 +52,6 @@ google.setOnLoadCallback(function()
 	$(".polaroid").draggable({
 		cursor: 'crosshair',
 		start: function(event, ui) {
-			console.log(this.attributes);
-			
 			dragging = true;
 			zindexnr++;
 			var cssObj = { 'box-shadow' : '#888 5px 10px 10px', // added in case CSS3 is standard
