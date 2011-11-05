@@ -106,7 +106,6 @@ Popcorn.player( "youtube", {
         media.pause = function() {
 
           if ( !media.paused ) {
-			console.log("PAUSED");
             media.paused = true;
             media.dispatchEvent( "pause" );
             youtubeObject.pauseVideo();

@@ -32,6 +32,7 @@
 					clearInterval( canplayInterval );
 					playbutton.removeAttribute("disabled");
 					$("object").css("visibility","hidden");
+					playbutton.setAttribute("class","playbutton-loaded");
 				}
 				console.log("Canplay " +canplay);
 			};
@@ -54,8 +55,9 @@
 			
 				// pause button
 			var pauseButton = document.getElementById("btnTogglePause"),
-				// needed to display and hide youtube videoa when appropriate
+				// needed to display and hide youtube video when appropriate
 				youtubeVideo1 = document.getElementById("youtube-video-1"),
+				youtubeVideo2 = document.getElementById("youtube-video-2"),
 				youtubeVideo3 = document.getElementById("youtube-video-3"),
 				youtubeVideo4 = document.getElementById("youtube-video-4"),
 				youtubeVideo6 = document.getElementById("youtube-video-6"),
@@ -279,6 +281,63 @@
 				mainTimeline.play();
             }).listen("loadeddata", function() { canplay ++ ; console.log("canplay");} );  
 
+			var youtube2 = Popcorn.youtube( "#youtube-video-2",
+                "http://youtu.be/rUJ1bm_Ih60" //#9  10th ave Freeze Out
+            ).volume(0).currentTime(20).googlemap({
+                start: 28, // seconds 10th Avenue + Estreet
+                end: 295, // seconds
+                type: "HYBRID",
+                target: "map7",
+                lat:  40.179013,
+                lng: -74.02364,
+                zoom: "18"
+            }).flickr({
+                start: 40,
+                end:   80,
+                tags:    "clarenceclemons",     //clarence & bruce
+                userid: "10359044@N04",
+                target: "content",
+                numberofimages: 3
+            }).flickr({
+                start: 90,
+                end:   160,
+                tags:    "clarenceclemons",     //clarence & bruce
+                userid: "64969964@N05",
+                target: "content",
+                numberofimages: 2
+            }).flickr({
+                start: 190,
+                end:   295,
+                tags:    "clarenceclemmons",     //clarence and bruce circa mid 70s
+                userid: "42030498@N05",
+                target: "content",
+                numberofimages: 1
+            }).flickr({
+                start: 170,
+                end:   295,
+                tags:    "brucespringsteensongtitles",     //Spraypainted wall Asbury Park
+                userid: "29879677@N03",
+                target: "content",
+                numberofimages: 1
+            }).twitter({
+                start: 50,// seconds
+                end: 295, //seconds
+                title: "Springsteen",
+                src: "#springsteen",
+                target: "twitter4"
+            } ).googlenews({
+                start: 110,//100, // seconds
+                end: 295, // seconds
+                topic: 'clarence clemons Bruce Springsteen',
+                target: 'google-news4'
+            }).exec( 295, function() {
+                youtube2.currentTime(20).pause();  
+                youtubeVideo2.firstChild.style.visibility = "hidden";
+                mainTimeline.play();
+            }).listen("loadeddata", function() { canplay ++ ; console.log("canplay");} );  
+
+			
+			
 			/* MAIN TIMELINE - just a basic counter */
 			
 			// current time of the main timeline
@@ -326,10 +385,13 @@
 				mainTimeline.pause();
 				youtube3.play(); //#8--test add clarence about magical moment
 				youtubeVideo3.firstChild.style.visibility = "visible";
-			}).listen( 'timeupdate', function() {
-				timing.innerHTML = mainTimeline.currentTime();
-			});
-			
+			}).exec( 3.2, function() {
+                mainTimeline.pause();
+                youtube2.currentTime(20).volume(10).play(); //#9  10th ave
+                youtubeVideo2.firstChild.style.visibility = "visible";
+            }).listen( 'timeupdate', function() {
+                timing.innerHTML = mainTimeline.currentTime();
+            });
 			/* MAIN TIMELINE UI STUFF */
 			// pause button click event
 			document.getElementById( "btnTogglePause" ).addEventListener( "click", 
@@ -371,18 +433,18 @@
 		</header>	
 		<div id="content">
 			<div id="baseplayer"></div>
-			<!-- div youtube1 needed for the first youtube video -->
-			<div id="youtube-video-1" style="width:345px;height:280px"></div>
-			<div id="youtube-video-3" style="width:345px;height:280px"></div>
-			<div id="youtube-video-4" style="width:345px;height:280px"></div>
-			<div id="youtube-video-6" style="width:345px;height:280px"></div>
-			<div id="youtube-video-7" style="width:345px;height:280px"></div>
+			<div id="youtube-video-1" class="youtube"></div>
+			<div id="youtube-video-2" class="youtube"></div>
+			<div id="youtube-video-3" class="youtube"></div>
+			<div id="youtube-video-4" class="youtube"></div>
+			<div id="youtube-video-6" class="youtube"></div>
+			<div id="youtube-video-7" class="youtube"></div>
 			
 			<!-- div needed for Twitter events -->
 			<div id="twitter" class="polaroid" style="display:none;"></div> 
 			<div id="twitter2" class="polaroid" style="display:none;"></div> 
 			<div id="twitter3" class="polaroid" style="display:none;"></div> 
-			<!--<div id="twitter2" class="polaroid"></div>-->
+			<div id="twitter4" class="polaroid" style="display:none;"></div> 
 
 			<!-- div needed for Google Map events -->
 			<div id="map"  class="polaroid" style="display:none;"></div>
@@ -391,11 +453,13 @@
 			<div id="map4" class="polaroid" style="display:none;"></div>
 			<div id="map5" class="polaroid" style="display:none;"></div>
 			<div id="map6" class="polaroid" style="display:none;"></div>
+			<div id="map7" class="polaroid" style="display:none;"></div>
 			
 			<!-- div needed for Google News events -->
 			<div id="google-news" class="polaroid" style="display:none;"></div>
 			<div id="google-news2" class="polaroid" style="display:none;"></div>
 			<div id="google-news3" class="polaroid" style="display:none;"></div>
+			<div id="google-news4" class="polaroid" style="display:none;"></div>
 			
 			<!--<div id="facebook" class="polaroid"></div>-->
 			
@@ -405,7 +469,7 @@
 	</div> <!-- page1 ends -->
 	<div id="splashPage"> <!--SPLASH PAGE -->
 	
-		<button id="playbutton" disabled="disabled">PLAY</button>
+		<button id="playbutton" disabled="disabled" class="playbutton-waiting">PLAY</button>
 
 		
 		<!--<h1>Scooter and The Big Man</h1> 

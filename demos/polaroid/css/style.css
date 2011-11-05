@@ -22,7 +22,8 @@ body, div, img, p {
 /* body { overflow:hidden; background-image:url(../images/bg.jpg); } */
 /*body { overflow:hidden; background-image:url(../images/clemons_bruce_10thave_4.jpg); }*/
 body { 
-	overflow:auto; 
+	xoverflow:auto; 
+	overflow:hidden;
 	background:white; 
 }   /* add padding { 100px 0 0 0; } to try and create nav and header */
 
@@ -51,7 +52,8 @@ body {
 	xcolor: #cccccc; 
 	z-index: 400;
 	xbackground-image:url(http://www.hamienet.com/Jungleland-sheet-music-page_3613-2-1.png);
-	background-image:url(../images/scooter+bigman_splashpage_1024x768_no-notes_smll.png);
+	xbackground-image:url(../images/scooter+bigman_splashpage_1024x768_no-notes_smll.png);
+	background-image:url(../images/scooter-+-big-Man_splash_chrome_1280x1024.png);
 	background-repeat: no-repeat;
 	background-position: top center;
 }
@@ -75,9 +77,10 @@ body {
 }
 
 
-#playbutton {
+.playbutton-waiting {
     xposition: relative; 
-    color:  orange;
+    xcolor:  orange;
+	color: black;
     font-size: 2em; /* was 19px */
     border-radius: 80px;
 	-moz-border-radius:80px;
@@ -88,13 +91,41 @@ body {
 	text-align: center;
     background: #000;
     border-color: white;
-	margin-left: 530px;  /* was 580px */
+	margin-left: auto;  /* made this change on Oct 16 anna sob files */
+	margin-right: auto; /* made this change on Oct 16 anna sob files */
+	xmargin-left: 530px;  /* was 580px */
     xmargin: 35px 0 0 40px;
     border-style: solid;
     border-width: thick;
 	cursor: pointer; 
 }
 
+
+.playbutton-loaded {
+    xposition: relative; 
+    color:  orange;
+	xcolor: white;
+    font-size: 2.2em; /* was 19px */
+    border-radius: 80px;
+	-moz-border-radius:80px;
+	-webkit-border-radius:80px;
+    width: 150px;
+    height: 150px;
+	display: block;
+	text-align: center;
+    background: #000;
+    xborder-color: white;
+	margin-left: auto;  /* made this change on Oct 16 anna sob files */
+	margin-right: auto; /* made this change on Oct 16 anna sob files */
+	xmargin-left: 530px;  /* was 580px */
+    xmargin: 35px 0 0 40px;
+	margin-top:35px;
+    border-style: solid;
+    border-width: thick;
+	cursor: pointer; 
+}
+
+/*
 #playbutton:hover { 
 background-color: #e88a1b; 
 color: #fff; 
@@ -109,6 +140,44 @@ border: none;
 #playbutton:visited {
 background-color: #e88a1b;
 }
+*/
+
+.playbutton-loaded:hover { 
+background-color: #e88a1b; 
+color: #fff; 
+font-size: 2.2em;
+border: none;
+}
+
+.playbutton-loaded:active	
+{ top: 1px; 
+}
+
+.playbutton-loaded:visited {
+background-color: #e88a1b;
+}
+
+#browserLinks {
+margin-left: auto;
+margin-right: auto;
+margin-top: 460px;
+color: #fff;
+font-size: 1.4em;
+}
+
+#browserLinks a {
+margin-left: auto;
+margin-right: auto;
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+}
+
+#browserLinks a:hover, a:active {
+	background: #000000;
+    border-radius: 3px 3px 3px 3px;
+	text-decoration: none !important;
+}   /* mouse over link */
 
     
 /* NAVIGATION */
@@ -274,6 +343,63 @@ p.detail a {
 
 /* #content-wrap { position:relative; width: 100 overflow: visible; margin: 0 auto; } */
 /*#timeline { width: 100%; height: 50px; } */
+
+
+
+/* YOUTUBE */
+
+/* .youtube {
+	border: 10px solid orange;
+    display: inline;
+    height: 280px;
+	xheight: 420px;
+	xheight: 350px;
+	width: 345px;
+	xwidth: 485px;
+	xwidth: 460px;
+    left: 400px;
+	xleft: 450px
+    padding-bottom: 0;
+    padding-top: 0px !important;
+    position: absolute;
+    top: 50px;
+} */
+
+.youtube {
+	xborder: 10px solid orange;
+    display: inline;
+    height: 280px;
+	xheight: 420px;
+	xheight: 350px;
+	width: 345px;
+	xwidth: 485px;
+	xwidth: 460px;
+    left: 400px;
+	xleft: 450px
+    padding-bottom: 0;
+    padding-top: 0px !important;
+    position: absolute;
+    top: 50px;
+} 
+
+/*#youtube-video-1 {
+	border: 10px solid orange;
+    display: inline;
+    xheight: 280px;
+	height: 420px !important;
+	xwidth: 345px;
+	width: 485px !important;
+	margin-left: auto;
+	margin-right: auto;
+    xleft: 400px;
+	xleft: 450px
+    padding-bottom: 0;
+    padding-top: 0px !important;
+    position: absolute;
+    xtop: 50px;
+	top: 200px;
+} */
+
 
 /* POLAROID */
 .polaroid { 
@@ -551,11 +677,6 @@ p.detail a {
     vertical-align: text-bottom;
     margin: 120px 0 0 40px !important;
 }
-
-
-
-
-
 
 
 
