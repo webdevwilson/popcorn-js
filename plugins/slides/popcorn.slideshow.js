@@ -31,11 +31,12 @@
                 this.canvas.style.width = '100%';
                 this.canvas.style.height = '100%';
                 this.context = this.canvas.getContext('2d');
-                document.getElementById( options.target ) && document.getElementById( options.target ).appendChild( this.canvas );
+				this.container = document.getElementById( options.target );
+				if(this.container) this.container.appendChild( this.canvas );
             
-                this.duration = (options.start - options.end) * 1000;
+                this.duration = (options.end - options.start) * 1000;
                 this.fadeTime = options.fadeTime || 1000;
-                this.displayTime = this.duration / options.images.length;
+                this.displayTime = (this.duration - this.fadeTime) / options.images.length;
                 this.backgroundColor = options.backgroundColor || '#000000';
                 
                 // image preloader
@@ -49,10 +50,9 @@
                     i.image.src = i.path;
                     return i;
                 }
-                
                 this.images = [];
                 for(var i=0; i < options.images.length; i++) {
-                    this.images.push(preloadImage({
+					this.images.push(preloadImage({
                         path: options.images[i],
                         loaded: false
                     }));
@@ -61,11 +61,12 @@
         },
         
         start: function(event,options) {
-            debugger;
+            
         },
         
         end: function(event,options) {
             clearInterval(this.interval);
+			this.container.innerHTML = '';
         },
         
         _teardown: function(options) {
