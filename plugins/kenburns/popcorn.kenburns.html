@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popcorn Ken Burns Plug-in Demo</title>
+  <script src="../../popcorn.js"></script>
+  <script src="popcorn.kenburns.js"></script>
+  <script> 
+    document.addEventListener('DOMContentLoaded', function () {
+      var p = Popcorn('#video')
+      .volume(0)
+      .play()
+      .kenburns({
+        start: 1, // seconds
+        end: 15, // seconds
+        target: 'kenburnsdiv',
+        images: [
+            'https://lh6.googleusercontent.com/-Xncgl2_KX5E/TgOZThvk65I/AAAAAAAABFc/6OVmfJRdXRo/e365/IMG_6141.JPG',
+            'https://lh3.googleusercontent.com/-nBhYSb9sQRk/ToufUDjTlII/AAAAAAAAClo/4cMzXAoRzTo/e365/DSC_2737-Edit.jpg',
+            'https://lh4.googleusercontent.com/-oXg81wLqeos/TqCLoBuvL9I/AAAAAAAAFGc/-ttrNpqV1Ys/e365/L1057586.jpg',
+            'https://lh4.googleusercontent.com/-uL6JpWOq82k/To9jCU-DPGI/AAAAAAAAEng/jAXJx2eSOXM/IMG_5249%252B-%252B1.jpg',
+            'https://lh4.googleusercontent.com/-1oYAqn8Hi9o/TgtZEE_8tKI/AAAAAAAAYJg/woQdbqPgBX4/e365/3410783929_310572ed16_o.jpg'
+        ]
+      });
+    }, false);
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">Popcorn Ken Burns Plug-in Demo</h1>
+  <div>
+    <video id='video' controls="controls" width= '250px' poster="../../test/poster.png"> 
+      <source id='mp4' src="../../test/trailer.mp4" type='video/mp4; codecs="avc1, mp4a"'> 
+      <source id='ogv' src="../../test/trailer.ogv" type='video/ogg; codecs="theora, vorbis"'> 
+      <p>Your user agent does not support the HTML5 Video element.</p> 
+    </video> 
+  </div>
+  <div id="kenburnsdiv" style="width: 600px; height: 432px;"></div>
+</body>
+</html>
